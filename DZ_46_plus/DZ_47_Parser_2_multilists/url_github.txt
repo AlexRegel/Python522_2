@@ -1,0 +1,1 @@
+https://github.com/AlexRegel/Python522_2/blob/master/DZ_46_plus/DZ_47_Parser_2_multilists/parser_47.py
