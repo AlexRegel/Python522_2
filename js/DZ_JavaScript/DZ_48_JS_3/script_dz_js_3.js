@@ -4,7 +4,7 @@ let cost = prompt("Введите стоимость покупки");
 let discount;
 let cost_all;
 let print_discount;
-if (cost > 500 & cost <= 1000) {
+if (cost > 500 && cost <= 1000) {
     discount = 0.03;
     cost_all = cost - cost * discount;
 }
