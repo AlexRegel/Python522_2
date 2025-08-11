@@ -865,10 +865,256 @@ document.writeln(Math.floor(Math.random() * 7 + 2)+ "<br>");  // от 2 до 9
 
 document.writeln(Math.floor(Math.random() * 7 + 7)+ "<br>");  // от 0 до 9 */
 
-let randMas = ["Цикл", "Массив", "Условие", "Функция"];
-document.writeln(pickRandom(randMas));
+// let randMas = ["Цикл", "Массив", "Условие", "Функция"];
+// document.writeln(pickRandom(randMas));
 
-function pickRandom(mas){
-    return mas[Math.floor(Math.random()*mas.length)];
+// function pickRandom(mas){
+//     return mas[Math.floor(Math.random()*mas.length)];
+// }
+
+// -----------------------------------------------
+/* let j = 2;
+
+if (true) {
+    j = 1;
+    // console.log(j);
 }
 
+console.log(j); */
+
+// function ch() {
+//     j = 1;
+//     // console.log(j);
+// }
+
+// ch()
+// console.log(j);
+// -----------------------------------------------
+
+/* document.writeln("<div id='block'></div>");
+let id = document.getElementById("block");
+
+id.style.width = "100px";
+id.style.height = "100px";
+// id.style.background = "rgb(255, 0, 0)";
+
+let createColor = () => {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    // id.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+    id.style.background = `rgb(${r}, ${g}, ${b})`;
+}
+
+createColor(); */
+// -----------------------------------------------
+
+// function test(a, b) {
+//     alert("a="+a+", b="+b);
+// }
+
+// test(1);
+// test(1, 2);
+// test(1, 2, 3);
+
+/* function test(a, b) {
+    console.log(arguments[0]);
+    console.log(arguments[1]);
+    console.log(arguments[2]);
+    console.log(arguments[3]);
+}
+
+test(1, 2, 3); */
+
+/* function sum() {
+    let res = 0;
+    for(let i=0; i<arguments.length; i++){
+        res += arguments[i];
+    }
+    let a = "Hello";
+    return [res, a];
+}
+
+document.writeln(sum() + "</br>");
+document.writeln(sum(1) + "</br>");
+document.writeln(sum(1, 2) + "</br>");
+document.writeln(sum(1, 2, 3) + "</br>");
+document.writeln(sum(1, 2, 3, 4) + "</br>");
+document.writeln(sum(1, 2, 3, 4, 5) + "</br>"); */
+
+
+// function hello(name = "незнакомец") {
+//     // name = name || "незнакомец";
+//     document.writeln("Привет, " + name + "! <br>");
+// }
+
+// hello("Иван");
+// hello();
+
+
+// ------------------------------------------------------
+/* function square(width, height=200, fon="green"){
+    document.writeln("<div id='shape'></div>");
+    let div = document.querySelector("#shape");
+
+    div.style.background = fon;
+    div.style.width = width + "px";
+    div.style.height = height + "px";
+}
+
+square(350, 450, "gold");
+square(150, 100);
+square(150);
+// square(height=200);  // Не работает */
+// ------------------------------------------------------
+
+
+// -вопрос?-------------------------------------
+// function hello(){
+//     alert("Привет");
+// }
+
+// alert(hello());
+// hello();
+// ------------------------------------------------------
+
+/* let str = "I\'m a JavaScript \"programmer\"";
+
+document.writeln(str + "<br>");
+document.writeln(str.length + "<br>");
+document.writeln(str[2] + "<br>");
+
+// str[2] = "y";
+
+str = str[2] + "y";
+document.writeln(str + "<br>"); */
+// ------------------------------------------------------
+
+/* let s = "абббабввбабвбвббабвббабв";
+counterLetters(s);
+
+
+function counterLetters(str){
+    let letters = ["а", 'б', 'в'];
+    for(let i=0; i<letters.length; i++){
+        let count = 0;
+        for(let j=0; j<str.length; j++){
+            if(str[j] == letters[i]){
+                count++
+            }            
+        }
+        document.writeln("Символ '" + letters[i] +"' встретился " + count + " раз<br>");
+    }
+} */
+// ------------------------------------------------------
+
+// let str = "I\'m a JavaScript \"programmer\"";
+
+// document.writeln(str[6] + "<br>");
+// document.writeln(str.charAt(6) + "<br>");
+
+// document.writeln(str.toLowerCase() + "<br>");
+// document.writeln(str.toUpperCase() + "<br>");
+// document.writeln(str + "<br>");
+
+
+// let n = prompt("Введите имя", "никита");
+// alert(first(n))
+
+// function first(str){
+//     let firstLetter = str.charAt(0).toUpperCase();
+//     for(let i=1; i< str.length; i++){
+//         firstLetter += str[i].toLowerCase();
+//     }
+//     return firstLetter;
+// }
+
+// -------------
+
+// -------------
+// but.onclick = hello;
+
+// function hello() {
+//     alert("Спасибо");
+// }
+
+// function change(id){
+//     id.innerHTML = "новый текст";
+// }
+
+/* function setColor(elem){
+    document.body.style.background = elem.className;
+} */
+
+/* let el = document.querySelector("#but");
+
+el.addEventListener("click", function(){
+    el.innerHTML="Новый текст"
+})
+
+el.addEventListener("contextmenu", function(){
+    el.style.color = "green";
+    el.style.background = "yellow";
+}) */
+
+
+// --??????????????????-----------------
+// document.addEventListener("mousemove", function(event){
+//     let c = document.querySelector("#elem");
+//     let x = event.clientX;
+//     let y = event.clientY;
+//     c.textContent = "X = " + x + ", Y = " + y;
+
+//     c.addEventListener("dbclick", function(event){
+//         event.target.style.background="red";
+//     })
+// })
+// --??????????????????-----------------
+
+// ------
+
+// setTimeout(Событие, задержэка)
+
+/* setTimeout(hello, 1000, "Привет", "друг");
+
+function hello(h, n){
+    alert(h + ', ' + n + '!');
+} */
+
+
+/* document.writeln("<div id='dt'>Создание анимированного текста</div>");
+
+let id = document.querySelector("#dt");  // "<div id='dt>Создание анимированного текста</div>"
+
+let text = document.querySelector("#dt").innerHTML;  // Создание анимированного текста
+
+let i = 0;
+
+window.addEventListener('load', animText);
+
+function animText() {
+    i++;
+    id.innerHTML = text.substring(0, i);
+    if(i > text.length){
+
+    }
+    setTimeout(animText, 500);
+} */
+
+/* let d = new Date();
+document.writeln(d + "<br>");
+document.writeln(d.toDateString() + "<br>");
+document.writeln(d.getFullYear + "<br>");
+document.writeln(d.getMonth() + "<br>");  // 6, от 0 по 11
+document.writeln(d.getDate() + "<br>");  // 23
+document.writeln(d.getDay() + "<br>");  // 3, от 0 - воскресенье, 6-суббота */
+
+let mounth = ['анваря', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+let day = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+
+// Сегодня: 23 июля 2025 год, Среда
+let d = new Date();
+let fullDate = "Сегодня; " + d.getDate() + " " + mounth[d.getMonth()] + " " + d.getFullYear() + " год, " + day[d.getDay()];
+
+document.writeln(fullDate);
