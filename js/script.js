@@ -722,7 +722,9 @@ res.style.textDecoration = "line-through"; */
 
 // js.splice(-2, 0, "но", "очень", "интересный");
 // console.log(js);
-// -----------------------------
+// ---------------------------------------------------------------------
+
+// Lesson 6 _JavaScript_ (order DZ_51)
 
 // let str = js.join(" & ");
 // console.log(str);
@@ -735,7 +737,7 @@ res.style.textDecoration = "line-through"; */
 //     fio[i] = prompt("Введите данные:", st[i]);
 // }
 
-// alert(fio.join(" "))
+// alert(fio.join(" "));
 
 
 // js.reverse();
@@ -746,12 +748,12 @@ res.style.textDecoration = "line-through"; */
 // console.log(js);
 
 // let m = [1, 5, 15, 2];
-// m.sort((a, b) => a - b);
-// console.log(m);
+// m.sort((a, b) => a - b);  // Указали функцию, как принцип сортировки
+// console.log(m);  // [1, 2, 5, 15] без указанной функции: [1, 15, 2, 5]
 // -----------------------------
 
 
-// Fanction Declaretion
+// Fanction Declaration
 
 // function caption(a, b, c){
 //     // alert(a + b + c);
@@ -766,25 +768,25 @@ res.style.textDecoration = "line-through"; */
 
 
 // ------------------------------------------
-/* function showArrayContent(arrayToShow) {
-// Тут идёт код функции.
-    if(arrayToShow.length == 1){
-        return arrayToShow;
-    } else {
-        let last = arrayToShow.pop();
-        let str = arrayToShow.join(', ');
-        let res = str + " и " + last;
-        return res;
-    }
-}
-// Определяем массивы.
-let a = new Array('Текст');
-let b = new Array('день', 'ночь');
-let c = new Array('зима', 'весна', 'лета', 'осень');
+// function showArrayContent(arrayToShow) {
+// // Тут идёт код функции.
+//     if(arrayToShow.length == 1){
+//         return arrayToShow;
+//     } else {
+//         let last = arrayToShow.pop();
+//         let str = arrayToShow.join(', ');
+//         let res = str + " и " + last;
+//         return res;
+//     }
+// }
+// // Определяем массивы.
+// let a = new Array('Текст');
+// let b = new Array('день', 'ночь');
+// let c = new Array('зима', 'весна', 'лета', 'осень');
 
 // alert(showArrayContent(a)); // Выводим содержимое массивов,
-alert(showArrayContent(b)); // используя созданную выше функцию.
-alert(showArrayContent(c)); */
+// alert(showArrayContent(b)); // используя созданную выше функцию.
+// alert(showArrayContent(c));
 // ------------------------------------------
 
 
@@ -798,19 +800,22 @@ alert(showArrayContent(c)); */
 alert(sum1(2, 3));
 
 
-alert(sum1(20, 30));
+alert(sum2(20, 30));  // Обращаемся раньше, чем функция была создана
 
 function sum2(a, b) {  // достаточно факта наличия этого объявления
     return a + b;
 } */
+
+
 // ------------------------------------------
 
 
 // ------------------------------------------
-// Immediately Invoked Function Express (фнонимная функция)
+// Immediately Invoked Function Express (IIFE) -
+// - самовызывающаяся функция (анонимная функция)
 
 // (function () {
-//     alert("Привет мир");
+//     alert("Привет мир");  // Подобие лямбда-функции в Python
 // })();  // Обязательно ставится
 
 // (function (n) {
@@ -837,8 +842,8 @@ function sum2(a, b) {  // достаточно факта наличия это�
 
 // alert(test(10, 20, 30));
 // ------------------------------------------
-/* // hello("Igor");  // Так не получится...
-let hello = n => alert("Hello, " + n);
+// hello("Igor");  // Так не получится...
+/* let hello = n => alert("Hello, " + n);
 hello("Igor");  // А только так */
 // ------------------------------------------
 
@@ -852,7 +857,7 @@ hello("Igor");  // А только так */
 // (function(){
 //     document.writeln(Math.random() + "<br>");
 // }(2, 9));  // 0.9604671599214994
-
+// --------
 /* (function(min, max){
     document.writeln(Math.floor(Math.random() * (max - min) + min)
     + "<br>");
@@ -862,25 +867,27 @@ hello("Igor");  // А только так */
 document.writeln(Math.floor(Math.random() * 9)+ "<br>");  // от 0 до 9
 document.writeln(Math.floor(Math.random() * 7 + 2)+ "<br>");  // от 2 до 9
 
+// от 7 до 14
+document.writeln(Math.floor(Math.random() * 7 + 7)+ "<br>");
+// от 7 до 15
+document.writeln(Math.floor(Math.random() * 8 + 7)+ "<br>"); */
+// --------
+/* let randMas = ["Цикл", "Массив", "Условие", "Функция"];
+document.writeln(pickRandom(randMas));
 
-document.writeln(Math.floor(Math.random() * 7 + 7)+ "<br>");  // от 0 до 9 */
-
-// let randMas = ["Цикл", "Массив", "Условие", "Функция"];
-// document.writeln(pickRandom(randMas));
-
-// function pickRandom(mas){
-//     return mas[Math.floor(Math.random()*mas.length)];
-// }
+function pickRandom(mas){
+    return mas[Math.floor(Math.random()*mas.length)];
+} */
 
 // -----------------------------------------------
-/* let j = 2;
+// let j = 2;
 
-if (true) {
-    j = 1;
-    // console.log(j);
-}
+// if (true) {
+//     let j = 1;
+//     // console.log(j);
+// }
 
-console.log(j); */
+// console.log(j);
 
 // function ch() {
 //     j = 1;
@@ -891,7 +898,7 @@ console.log(j); */
 // console.log(j);
 // -----------------------------------------------
 
-/* document.writeln("<div id='block'></div>");
+document.writeln("<div id='block'></div>");
 let id = document.getElementById("block");
 
 id.style.width = "100px";
@@ -899,14 +906,14 @@ id.style.height = "100px";
 // id.style.background = "rgb(255, 0, 0)";
 
 let createColor = () => {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
+    let r = parseInt(Math.random() * 256);  // Math.floor
+    let g = parseInt(Math.random() * 256);
+    let b = parseInt(Math.random() * 256);
     // id.style.background = "rgb(" + r + ", " + g + ", " + b + ")";
     id.style.background = `rgb(${r}, ${g}, ${b})`;
 }
 
-createColor(); */
+createColor();
 // -----------------------------------------------
 
 // function test(a, b) {
