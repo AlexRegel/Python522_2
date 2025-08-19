@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -15,10 +16,76 @@
             outline: 8px solid green;
         }
     </style> -->
+
+    <!--  <style>
+        #container{
+            width: 400px;
+            height: 400px;
+            background: yellow;
+            position: relative;
+        }
+        #animate{
+            width: 50px;
+            height: 50px;
+            background: green;
+            position: absolute;
+        }
+    </style> -->
 </head>
+<!-- onload="loadStr()" -->
+
 <body>
     <h1>JavaScript</h1>
+    <!-- //height="128" -->
+    <!-- <img src="golden_star.png" name="image" width="128" alt="">
+    <img src="blue_star.png" name="image" width="128" alt=""> -->
+
+    <!-- <p><a href="#" id="cl">Click me</a></p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div> -->
+
+    <!--     <div id="clock">
+        <img src="c0.gif" alt="">
+        <img src="c0.gif" alt="">
+        <img src="dv.png" alt="">
+        <img src="c0.gif" alt="">
+        <img src="c0.gif" alt="">
+        <img src="dv.png" alt="">
+        <img src="c0.gif" alt="">
+        <img src="c0.gif" alt="">
+    </div> -->
+
+    <!-- Les 7 beginning -->
+    <p onClick="alert('Клик')">Не нажимать</p>
+
+    <p id="mes" onmouseover="over()" onmouseout="out()">Наведите на этот текст курсор мыши</p>
+
+    <h2 id="title">Заголовок страницы</h2>
+
+    <p onclick="change()"><a href="#">Изменить цвет</a></p>
+
+    <img src="golden_star.png" onmousemove="randomBg()" alt="">
+
+    <img id="image" src="day.png" onmousedown="on()" onmouseup="off()">
+
+    <!-- <p id="but">Не нажимать!</p> -->
+
+    <!-- <p onclick="change(this)">Раз</p>
+    <p onclick="change(this)">Два</p>
+    <p onclick="change(this)">Три</p> -->
+<!-- this - ключевое слово-элемент, по которому будет вызываться событие  -->
+
+    <!-- <a href="#" onclick="setColor(this)" class="red">Красный</a>
+    <a href="#" onclick="setColor(this)" class="blue">Синий</a>
+    <a href="#" onclick="setColor(this)" class="yellow">Жёлтый</a> -->
     
+
+    <!-- Les 7 end -->
+
+    <!-- onClick/onclick/ONCLICK - для JS без разницы -->
+
     <!-- <a href="#" onclick="setColor(this)" class="red">Красный</a>
     <a href="#" onclick="setColor(this)" class="blue">Синий</a>
     <a href="#" onclick="setColor(this)" class="yellow">Жёлтый</a> -->
@@ -26,7 +93,7 @@
     <!-- <p id="but">Не нажимать!</p> -->
 
     <!-- <div id="elem"></div> -->
-    
+
     <!-- <div class="one"></div>
     <div class="two"></div> -->
 
@@ -54,4 +121,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

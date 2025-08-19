@@ -898,7 +898,7 @@ function pickRandom(mas){
 // console.log(j);
 // -----------------------------------------------
 
-document.writeln("<div id='block'></div>");
+/* document.writeln("<div id='block'></div>");
 let id = document.getElementById("block");
 
 id.style.width = "100px";
@@ -913,7 +913,7 @@ let createColor = () => {
     id.style.background = `rgb(${r}, ${g}, ${b})`;
 }
 
-createColor();
+createColor(); */
 // -----------------------------------------------
 
 // function test(a, b) {
@@ -924,15 +924,15 @@ createColor();
 // test(1, 2);
 // test(1, 2, 3);
 
-/* function test(a, b) {
-    console.log(arguments[0]);
-    console.log(arguments[1]);
-    console.log(arguments[2]);
-    console.log(arguments[3]);
-}
+// function test(a, b) {
+//     console.log(arguments[0]);
+//     console.log(arguments[1]);
+//     console.log(arguments[2]);
+//     console.log(arguments[3]);
+// }
 
-test(1, 2, 3); */
-
+// test(1, 2, 3);
+// **********************************************
 /* function sum() {
     let res = 0;
     for(let i=0; i<arguments.length; i++){
@@ -942,22 +942,22 @@ test(1, 2, 3); */
     return [res, a];
 }
 
+document.writeln("Так поредаётся 2 и > элемента, как массив:" + "</br>");
 document.writeln(sum() + "</br>");
 document.writeln(sum(1) + "</br>");
 document.writeln(sum(1, 2) + "</br>");
 document.writeln(sum(1, 2, 3) + "</br>");
 document.writeln(sum(1, 2, 3, 4) + "</br>");
 document.writeln(sum(1, 2, 3, 4, 5) + "</br>"); */
+// **********************************************
 
+/* function hello(name = "незнакомец") {
+    // name = name || "незнакомец";
+    document.writeln("Привет, " + name + "! <br>");
+}
 
-// function hello(name = "незнакомец") {
-//     // name = name || "незнакомец";
-//     document.writeln("Привет, " + name + "! <br>");
-// }
-
-// hello("Иван");
-// hello();
-
+hello("Иван");
+hello(); */
 
 // ------------------------------------------------------
 /* function square(width, height=200, fon="green"){
@@ -971,18 +971,19 @@ document.writeln(sum(1, 2, 3, 4, 5) + "</br>"); */
 
 square(350, 450, "gold");
 square(150, 100);
-square(150);
+square(150, 150, "red");
+square();
 // square(height=200);  // Не работает */
 // ------------------------------------------------------
 
 
 // -вопрос?-------------------------------------
-// function hello(){
-//     alert("Привет");
-// }
+/* function hello(){
+    alert("Привет");
+}
 
-// alert(hello());
-// hello();
+alert(hello);  // ()
+// hello(); */
 // ------------------------------------------------------
 
 /* let str = "I\'m a JavaScript \"programmer\"";
@@ -1025,19 +1026,111 @@ function counterLetters(str){
 // document.writeln(str + "<br>");
 
 
-// let n = prompt("Введите имя", "никита");
-// alert(first(n))
+/* let n = prompt("Введите имя", "никита");
+alert(first(n))
 
-// function first(str){
-//     let firstLetter = str.charAt(0).toUpperCase();
-//     for(let i=1; i< str.length; i++){
-//         firstLetter += str[i].toLowerCase();
-//     }
-//     return firstLetter;
-// }
+function first(str){
+    let firstLetter = str.charAt(0).toUpperCase();
+    for(let i=1; i< str.length; i++){
+        firstLetter += str[i].toLowerCase();
+    }
+    return firstLetter;
+} */
 
 // -------------
+// let str = "I'm a JavaScript \"programmer\"";
+// let str1 = "Я учу JavaScript. Мне нравится JavaScript.";
+// str = str.concat(str1);
+// document.writeln(str + "<br>");
 
+// document.writeln(str.indexOf("JavaScript", 7) + "<br>");
+// document.writeln(str.lastIndexOf("JavaScript") + "<br>");
+
+/* let email;
+
+do{
+    email = prompt("Введите Email:");
+    if(email.indexOf("@")==-1){
+        alert("Некорректно. Повторите операцию");
+        continue;
+    }
+    break;
+}while(true);
+
+alert("Спасибо за сотрудничество"); */
+
+// document.writeln(str.split(".") + "<br>");
+// console.log(str.split(".", 2));
+
+// document.writeln(str.slice(0,3) + "<br>");
+// document.writeln(str.slice(-23, -10) + "<br>");
+// document.writeln(str.substring(0, 3) + "<br>");
+// document.writeln(str.substring(3, 0) + "<br>");
+// document.writeln(str.substring(-10) + "<br>");
+
+/* let style = prompt("Введите свойстов CSS", "background-color");
+alert(replace(style));
+
+function replace(str){
+    let mas = str.split("-");  // ["background", "color"]
+    for(let i = 1; i < mas.length; i++){
+        mas[i] = mas[i].charAt(0).toUpperCase() + mas[i].slice(1);
+    }
+    return mas.join('');
+} */
+
+/* function loadStr(){
+    alert("Страница была загружена")
+} */
+// ----------------------------------------------
+let m = document.getElementById("mes");
+
+function over() {
+    m.style.color = "red";
+}
+function out() {
+    m.style.color = "yellow";
+}
+
+function change() {
+    let id = document.getElementById("title");
+    id.style.color = "blue";
+}
+
+function randomBg() {
+    // document.body.style.background="rgb("+rand()+","+rand()+","+rand()+")";
+    document.body.style.background = `rgb(${rand()}, ${rand()}, ${rand()})`;
+}
+
+function rand() {
+    return Math.floor(Math.random() * 256);
+}
+
+let image = document.getElementById("image");
+
+function on() {
+    image.src = "night.png"
+}
+
+function off() {
+    image.src = "day.png"
+}
+// ----------------------------------------------
+//--------
+// let but1 = document.getElementById("but");  // не
+
+/* // Вариант записи 1:
+but.onclick = hello;
+
+function hello(){
+    alert("Спасибо");
+}
+
+// Вариант записи 2:
+but.onclick = function(){
+    alert("Спасибо");
+} */
+//--------
 // -------------
 // but.onclick = hello;
 
@@ -1045,83 +1138,352 @@ function counterLetters(str){
 //     alert("Спасибо");
 // }
 
-// function change(id){
-//     id.innerHTML = "новый текст";
-// }
-
-/* function setColor(elem){
-    document.body.style.background = elem.className;
+/* function change(id){ // Ссылается на объект <p onclick="change(this)">...html
+    id.innerHTML = "новый текст";
 } */
 
-/* let el = document.querySelector("#but");
+/* function setColor(elem){  // "elem" находит по ключевому слову "this" в html
+    document.body.style.background = elem.className;  // и применяет класс
+}  // напр. <a href="#" onclick="setColor(this)" class="red">Красный</a> в html*/
 
-el.addEventListener("click", function(){
-    el.innerHTML="Новый текст"
+//--------
+/* let el = document.querySelector("#but");  // тег <p> - 'не нажимать'
+
+el.addEventListener("click", function(){  // .addEventListener - слушатель события
+    el.innerHTML="Новый текст";
 })
 
-el.addEventListener("contextmenu", function(){
+// Можно так написать:
+// el.addEventListener("contextmenu", function(){
+//     el.style.color = "green";
+//     el.style.background = "yellow";
+// })
+// А можно написать иначе:
+el.addEventListener("contextmenu", setColor);
+
+function setColor(){
     el.style.color = "green";
     el.style.background = "yellow";
-}) */
+} */
+//--------
 
+/* // ch95hl - сокр. от строка 95 html
+document.addEventListener("mousemove",
+    function (event) { // ch95hl
+        let c = document.querySelector("#elem");
+        let x = event.clientX;
+        let y = event.clientY
+        c.textContent = "x = " + x + ", y = " + y;
+        c.addEventListener("dblclick", function
+        (event){
+            event.target.style.background = "red";
+        })
+    }
+) */
+//--------
+/* let el = document.querySelector("#but");  // тег <p> - 'не нажимать'
+el.addEventListener("click", handler);
 
-// --??????????????????-----------------
-// document.addEventListener("mousemove", function(event){
-//     let c = document.querySelector("#elem");
-//     let x = event.clientX;
-//     let y = event.clientY;
-//     c.textContent = "X = " + x + ", Y = " + y;
+function handler(){
+    alert("Спасибо");
+    el.removeEventListener("click", handler);
+} */
+//--------
 
-//     c.addEventListener("dbclick", function(event){
-//         event.target.style.background="red";
-//     })
-// })
-// --??????????????????-----------------
+// setTimeout(функция, задержка);
 
-// ------
+/* // setTimeout("alert('Текст')", 3000);  // задержка в 3 секунды
 
-// setTimeout(Событие, задержэка)
+// setTimeout(hello, 1000, "Привет", "друг");  // hello, 3000 - 2 обязательных, но могут быть дополнительные параметры ("Привет", "друг", "как ты").
 
-/* setTimeout(hello, 1000, "Привет", "друг");
+setTimeout('hello("Привет", "друг")', 5000);  // hello() обязательно в кавычках, если такая форма записи.
 
 function hello(h, n){
-    alert(h + ', ' + n + '!');
+    alert(h + ", "+ n + '! ');
 } */
+//--------
 
+document.writeln("<div id='dt'>Создание анимированного текста</div>");
 
-/* document.writeln("<div id='dt'>Создание анимированного текста</div>");
-
-let id = document.querySelector("#dt");  // "<div id='dt>Создание анимированного текста</div>"
-
-let text = document.querySelector("#dt").innerHTML;  // Создание анимированного текста
+let id = document.querySelector('#dt');  // <div id="dt">Создание анимированного текста</div>
+let text = document.querySelector('#dt').innerHTML;
+console.log(text);
 
 let i = 0;
 
 window.addEventListener('load', animText);
 
 function animText() {
-    i++;
     id.innerHTML = text.substring(0, i);
-    if(i > text.length){
-
+    i++;  // i = i + 1;
+    if (i > text.length) {
+        i = 0;
     }
-    setTimeout(animText, 500);
-} */
+    setTimeout(animText, 100);
+}
+// ------
 
-/* let d = new Date();
+
+let d = new Date();
 document.writeln(d + "<br>");
 document.writeln(d.toDateString() + "<br>");
-document.writeln(d.getFullYear + "<br>");
+document.writeln(d.getFullYear() + "<br>");
 document.writeln(d.getMonth() + "<br>");  // 6, от 0 по 11
 document.writeln(d.getDate() + "<br>");  // 23
-document.writeln(d.getDay() + "<br>");  // 3, от 0 - воскресенье, 6-суббота */
+document.writeln(d.getDay() + "<br>");  // 3, от 0 - воскресенье, 6-суббота
 
+// -------------------
 let mounth = ['анваря', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
 let day = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
 
 // Сегодня: 23 июля 2025 год, Среда
-let d = new Date();
-let fullDate = "Сегодня; " + d.getDate() + " " + mounth[d.getMonth()] + " " + d.getFullYear() + " год, " + day[d.getDay()];
+// let d = new Date();
+let fullDate = "Сегодня: " + d.getDate() + " " + mounth[d.getMonth()] + " " + d.getFullYear() + " год, " + day[d.getDay()];
 
 document.writeln(fullDate);
+
+// ***************************************************************************
+// Lesson 8
+
+// setInterval(функцимя, интервал)
+
+// ---------------------
+/* document.writeln("<input type='button' value='sratr / stop'>");
+document.querySelector('input').addEventListener("click", startStop);
+
+let act, run;
+console.log(run)
+
+function startStop(){
+    if(!run){
+        act = setInterval(setColor, 1000);
+        // run = true;
+    }else{
+        clearInterval(act);
+        // run = false;
+    }
+    // console.log(act);
+    run = !run;
+}
+
+function setColor(){
+    let x = document.body;
+    x.style.background = x.style.background == "yellow" ? "orange": "yellow";
+} */
+// ---------------------
+
+/* document.writeln("<div id='text'>Здесь будет отображаться текущее время</div>");
+// window.addEventListener('load', setInterval(time, 1000));
+// window.addEventListener('load', function(){
+//     setInterval(time, 1000)
+// });
+window.addEventListener('load', () => setInterval(time, 1000));
+
+function time(){
+    let d = new Date();
+    let hour = d.getHours();
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
+
+    if(min<10){
+        min = "0" + min;
+    }
+    if(sec<10){
+        sec = "0" + sec;
+    }
+
+    let times = hour + ":" + min +  ":" + sec;
+    // console.log(times);
+    document.querySelector("#text").innerHTML = times;
+} */
+// ---------------------
+
+
+/* document.writeln("<div id='text'>Здесь будет отображаться текущее время</div>");
+window.addEventListener('load', () => setInterval(time, 1000));
+
+function time(){
+    let d = new Date();
+    let hour = d.getHours();
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
+
+    if(min<10){
+        min = "0" + min;
+    }
+    if(sec<10){
+        sec = "0" + sec;
+    }
+
+    let times = hour + ":" + min +  ":" + sec;
+    // console.log(times);
+    document.querySelector("#text").innerHTML = times;
+}
+
+
+
+let imgTime = ['c0.gif','c1.gif','c2.gif','c3.gif','c4.gif','c5.gif','c6.gif','c7.gif','c8.gif','c9.gif'];
+
+let t = document.querySelectorAll("#clock img");
+
+clock();
+
+function clock(){
+    let time = new Date();
+    let hours = time.getHours();
+    let mins = time.getMinutes();
+    let seconds = time.getSeconds();
+
+    // console.log(hours, mins, seconds);
+    getImg(hours, mins, seconds);
+    setTimeout(clock, 1000);
+}
+
+function getImg(h, m, s){  // 19 / 10 = 1.9 => округляем => 1
+    t[0].src = imgTime[parseInt(h / 10)];
+    t[1].src = imgTime[h % 10];
+
+    t[3].src = imgTime[Math.floor(m / 10)];
+    t[4].src = imgTime[m % 10];
+
+    t[6].src = imgTime[Math.floor(s / 10)];
+    t[7].src = imgTime[s % 10];
+} */
+
+// ---------------------
+/* document.writeln(`
+    <input type='text' size='4' id='timer' value='0.0'>
+    <input type='button' value='Start/Stop'>
+    <input type='button' value='Clear'>
+`)
+
+document.querySelector("input[value='Start/Stop']").addEventListener('click', startTimer);
+
+document.querySelector("input[value='Clear']").addEventListener('click', resetTimer);
+
+let id, flag;
+function startTimer() {
+    if (!flag) {
+        id = setInterval(incTimer, 100);
+    } else {
+        clearInterval(id);
+    }
+    flag = !flag;
+}
+
+let tsec = 0;
+    function incTimer() {
+        tsec++;
+        let t = tsec/10.0;
+        if(tsec%10==0){
+            t+=".0";
+        }
+        document.getElementById("timer").value = t;
+    }
+
+function resetTimer(){
+    document.getElementById("timer").value = "0.0";
+    tsec = 0;
+} */
+
+// ---------------------
+
+/* let a = document.querySelector("#cl");
+a.addEventListener("click", myMove);
+
+function myMove() {
+    let elem = document.getElementById("animate");
+    let pos = 0;
+    let id = setInterval(frame, 5);
+
+    function frame() {
+        // a.style.display='none';
+        // a.style.visibility='hidden';
+        if (pos == 350) {
+            // a.style.display='block';
+            // a.style.visibility='visible';
+            a.addEventListener("click", myMove);
+            clearInterval(id);
+        } else {
+            a.removeEventListener("click", myMove);
+            pos++;
+            elem.style.top = pos + "px";
+            elem.style.left = pos + "px";
+        }
+    }
+} */
+
+// ---------------------
+
+// window.document.image.border = 1;  // подобная запись
+// document.image.border = 1;  // "1"
+// document.writeln("<br>Ширина изображения: " + document.image.width + "<br>");
+// document.writeln("<br>Высота изображения: " + document.image.height + "<br>");
+
+// document.image.width = 200;
+// document.image.src = "blue_star.png";
+
+// Задание "Перелистывание картинок":-------------------------
+/* let array = new Array('2.jpg', '3.jpg', '4.jpg');
+document.writeln("<input type='botton' value='<' name='left'>");
+
+document.writeln("<img src='" + array[0] + "'>");
+
+document.writeln("<input type='botton' value='>' name='right'>");
+
+document.getElementsByName('right')[0].addEventListener('click', arrowRight);
+document.getElementsByName('left')[0].addEventListener('click', arrowLeft);
+
+let image = document.querySelector("img");
+let i = 0;
+
+function arrowRight() {
+    i++;
+    if (i == array.length) {
+        i = 0;
+    }
+    image.src = array[i];
+}
+
+function arrowLeft() {
+    i--;
+    if (i < 0) {
+        i = array.length - 1;
+    }
+    image.src = array[i];
+} */
+// Задание "Перелистывание картинок" окончание.-------------------------
+
+
+// нач. к Д/з:
+
+// let a = 5;
+// let b = 10;
+// let c;
+
+// console.log("a =", a);
+// console.log("b =", b);
+
+// c = a;
+// a = b;
+// b = c;
+
+// console.log("a =", a);
+// console.log("b =", b);
+
+
+document.writeln("<br>" + "<input type='number' min='1' max='3' value='3'>");
+document.writeln("<input type='button' id='btn' value='Кнопка'>");
+
+let btn = document.querySelector("#btn");
+console.log(btn);
+
+btn.addEventListener("click", function () {
+    let el = document.querySelector("input").value;
+    console.log(el);
+})
+
+// let el = document.querySelector("input");
+// console.log(el);
+// окончан к Д/з.
