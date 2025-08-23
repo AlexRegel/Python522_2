@@ -17,6 +17,18 @@
         }
     </style> -->
 
+    <!-- <style>
+        .active {
+            border: 5px solid green;
+        }
+        .alert {
+            border: 5px solid red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style> -->
+
     <!--  <style>
         #container{
             width: 400px;
@@ -31,11 +43,96 @@
             position: absolute;
         }
     </style> -->
+
+
+    <style>
+        .pane {
+            position: relative;
+            border-top: 2px solid #339900;
+            background-color: #ccffcc;
+            padding: 0px 20px 20px;
+            margin: 0px;
+        }
+
+        .remove-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            display: block;
+            background: url(button_delete_green.png) no-repeat;
+            width: 16px;
+            height: 16px;
+        }
+
+        h3 {
+            padding-right: 20px;
+        }
+    </style>
+
+
 </head>
 <!-- onload="loadStr()" -->
 
 <body>
     <h1>JavaScript</h1>
+
+    <div id="messages-container">
+        <div class="pane">
+            <h3>Лошадь</h3>
+            <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид
+                дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+            <span class="remove-button"></span>
+        </div>
+        <div class="pane">
+            <h3>Осёл</h3>
+            <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+            <span class="remove-button"></span>
+        </div>
+        <div class="pane">
+            <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+            <p>Корова — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют тёлками.</p>
+            <span class="remove-button"></span>
+        </div>
+</div>
+
+<!--     <img src="1.jpg" alt="Лягушка" class="frog" id="greenFrog" title="Зелёная лягушка" data-frog="Зелёная лягушка"> -->
+
+    <!-- <div>Div #1</div>
+    <div class="active">Div #2</div> -->
+
+    <!-- <p class="dom"> DOM элемент </p> -->
+<!-- class - точка -->
+    <!-- <ul class="list">
+        <li>Меркурий</li>
+        <li>Венера</li>
+        <li>Земля</li>
+    </ul> -->
+
+    <!-- <div id="root">
+        <p id="p1">Первый абзац</p>
+        <p id="p2">Второй абзац</p>
+    </div> -->
+
+    <!-- <ul>
+        <li>Элемент списка 1</li>
+        <li>Элемент списка 2</li>
+        <li>Элемент списка 3</li>
+    </ul> -->
+<!--  -->
+    <!-- <ul id="list1">
+        <li>Кофе</li>
+        <li>Чай</li>
+    </ul>
+
+    <ul id="list2">
+        <li>Вода</li>
+        <li>Молоко</li>
+    </ul>
+
+    <button id="move">Переместить</button>
+    <button id="add">Добавить</button> -->
+<!--  -->
     <!-- //height="128" -->
     <!-- <img src="golden_star.png" name="image" width="128" alt="">
     <img src="blue_star.png" name="image" width="128" alt=""> -->
@@ -46,7 +143,7 @@
         <div id="animate"></div>
     </div> -->
 
-    <!--     <div id="clock">
+    <!-- <div id="clock">
         <img src="c0.gif" alt="">
         <img src="c0.gif" alt="">
         <img src="dv.png" alt="">
@@ -58,7 +155,7 @@
     </div> -->
 
     <!-- Les 7 beginning -->
-    <p onClick="alert('Клик')">Не нажимать</p>
+    <!-- <p onClick="alert('Клик')">Не нажимать</p>
 
     <p id="mes" onmouseover="over()" onmouseout="out()">Наведите на этот текст курсор мыши</p>
 
@@ -68,7 +165,7 @@
 
     <img src="golden_star.png" onmousemove="randomBg()" alt="">
 
-    <img id="image" src="day.png" onmousedown="on()" onmouseup="off()">
+    <img id="image" src="day.png" onmousedown="on()" onmouseup="off()"> -->
 
     <!-- <p id="but">Не нажимать!</p> -->
 

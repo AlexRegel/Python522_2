@@ -13,5 +13,5 @@ function hidePic() {
     picture.src = "";
 }
 
-console.log(showPic);
-console.log(hidePic);
+// console.log(showPic);
+// console.log(hidePic);

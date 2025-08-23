@@ -1083,7 +1083,7 @@ function replace(str){
     alert("Страница была загружена")
 } */
 // ----------------------------------------------
-let m = document.getElementById("mes");
+/* let m = document.getElementById("mes");
 
 function over() {
     m.style.color = "red";
@@ -1114,7 +1114,7 @@ function on() {
 
 function off() {
     image.src = "day.png"
-}
+} */
 // ----------------------------------------------
 //--------
 // let but1 = document.getElementById("but");  // не
@@ -1203,7 +1203,7 @@ function hello(h, n){
 } */
 //--------
 
-document.writeln("<div id='dt'>Создание анимированного текста</div>");
+/* document.writeln("<div id='dt'>Создание анимированного текста</div>");
 
 let id = document.querySelector('#dt');  // <div id="dt">Создание анимированного текста</div>
 let text = document.querySelector('#dt').innerHTML;
@@ -1220,11 +1220,11 @@ function animText() {
         i = 0;
     }
     setTimeout(animText, 100);
-}
+} */
 // ------
 
 
-let d = new Date();
+/* let d = new Date();
 document.writeln(d + "<br>");
 document.writeln(d.toDateString() + "<br>");
 document.writeln(d.getFullYear() + "<br>");
@@ -1241,7 +1241,7 @@ let day = ['воскресенье', 'понедельник', 'вторник',
 // let d = new Date();
 let fullDate = "Сегодня: " + d.getDate() + " " + mounth[d.getMonth()] + " " + d.getFullYear() + " год, " + day[d.getDay()];
 
-document.writeln(fullDate);
+document.writeln(fullDate); */
 
 // ***************************************************************************
 // Lesson 8
@@ -1319,14 +1319,14 @@ function time(){
     let times = hour + ":" + min +  ":" + sec;
     // console.log(times);
     document.querySelector("#text").innerHTML = times;
-}
+} */
 
 
-
-let imgTime = ['c0.gif','c1.gif','c2.gif','c3.gif','c4.gif','c5.gif','c6.gif','c7.gif','c8.gif','c9.gif'];
+// ---------------------
+/* let imgTime = ['c0.gif','c1.gif','c2.gif','c3.gif','c4.gif','c5.gif','c6.gif','c7.gif','c8.gif','c9.gif'];
 
 let t = document.querySelectorAll("#clock img");
-
+console.log(t);
 clock();
 
 function clock(){
@@ -1455,7 +1455,7 @@ function arrowLeft() {
 } */
 // Задание "Перелистывание картинок" окончание.-------------------------
 
-
+// Информация для dz_53_js_8-------------------------------------------
 // нач. к Д/з:
 
 // let a = 5;
@@ -1473,7 +1473,7 @@ function arrowLeft() {
 // console.log("b =", b);
 
 
-document.writeln("<br>" + "<input type='number' min='1' max='3' value='3'>");
+/* document.writeln("<br>" + "<input type='number' min='1' max='3' value='3'>");
 document.writeln("<input type='button' id='btn' value='Кнопка'>");
 
 let btn = document.querySelector("#btn");
@@ -1482,8 +1482,133 @@ console.log(btn);
 btn.addEventListener("click", function () {
     let el = document.querySelector("input").value;
     console.log(el);
-})
+}) */
 
 // let el = document.querySelector("input");
 // console.log(el);
-// окончан к Д/з.
+// окончание информации для dz_53_js_8----------------------------
+
+// Занятие 9 ------------------------------------
+
+// alert(document.documentElement.innerHTML);
+// alert(document.head);
+// alert(document.body.innerHTML);
+
+// let myTitle = document.querySelector("h1").innerHTML;
+// console.log(myTitle);
+
+// // let par = document.querySelector("p").firstChild.nodeValue;
+// // let par = document.querySelector("p").childNodes[0].nodeValue;
+// // let par = document.querySelector("p").nodeName;
+// // let par = document.querySelector(".dom").nodeType;
+// let par = document.querySelector(".dom").firstChild.nodeType;
+// console.log(par);
+//------------------------------
+
+/* let elem = document.querySelector("#root");
+
+let tag = document.createElement("p");  // <p></p> - создан тег "p"
+let node = document.createTextNode("Новый текст!!!");  // Новый текст!!!
+tag.append(node);  // <p>Новый текст!!!</p> - 
+
+elem.append(tag);  // добавляет новый элемент дочерним последним элементом внутри родительского
+elem.prepend(tag);  // добавляет новый элемент первым дочерним элементом внутри родительского
+elem.before(tag);  // добавляет новый элемент до выбранного id
+elem.after(tag);  // добавляет новый элемент после выбранного id
+
+elem.replaceWith(tag);  // заменяет новым элементом выбранный id */
+//------------------------------
+/* let list = document.querySelector("ul");
+
+let newItem = document.createElement("li");
+newItem.innerHTML = "Новый <i>элемент списка</i>";
+
+list.append(newItem); */
+//------------------------------
+/* document.querySelector("#move").addEventListener("click", change);
+document.querySelector("#add").addEventListener("click", add);
+let i = 1;
+
+function add(){
+    let elem = document.createElement("li");
+    elem.innerHTML = "Water" + i;
+    document.querySelector("#list2").append(elem);  // либо так
+    // list2.append(elem);  // либо так
+    i++;
+}
+
+function change(){
+    let elem = document.querySelector("#list2").lastChild;
+    document.querySelector("#list1").append(elem);
+
+} */
+//------------------------------
+/* let div = document.querySelector("#root");
+div.insertAdjacentHTML("beforebegin", "<p>До выбранного элемента</p>");
+div.insertAdjacentHTML("afterend", "<p>После выбранного элемента</p>");
+div.insertAdjacentHTML("afterbegin", "<p>Первый внутри выбранного элемента</p>");
+div.insertAdjacentHTML("beforeend", "<p>Последний внутри выбранного элемента</p>");
+
+let first = document.querySelector("#p1");
+// first.remove();
+let second = document.querySelector("#p2");
+second.after(first); */
+//------------------------------
+
+/* let ul = document.querySelector("ul");
+let clone = ul.cloneNode(true);
+
+clone.querySelector("li").innerHTML = "Начало клюнируемых элементов";
+ul.after(clone);
+ */
+//------------------------------
+/* let list = document.querySelector(".list");
+list.insertAdjacentHTML("beforebegin", "<h2>Список </h2><hr>");
+
+let list_inner = document.querySelector("h2");
+list_inner.insertAdjacentText("beforeend", "планет");
+list.insertAdjacentHTML("afterend", "<hr>");
+let hr = document.querySelectorAll("hr")[1];
+let h4 = document.createElement("h4");
+h4.innerHTML = "Конец списка";
+hr.insertAdjacentElement("afterend", h4);
+
+let idRemove = setInterval(function(){
+    let li = document.querySelector(".list > li:last-child");
+    if (li === null){
+        clearInterval(idRemove);
+        // alert("Список удалён");
+        list.insertAdjacentHTML("beforebegin", "<li>Список удалён</li>");
+    }else{
+        li.remove();
+    }
+    
+}, 500); */
+//------------------------------
+/* let div = document.querySelector("div");
+div.className = "alert";
+let activeDiv = document.querySelector(".active");
+// activeDiv.className = "hidden";
+activeDiv.classList.add("hidden");
+// activeDiv.classList.remove("hidden");
+activeDiv.classList.toggle("hidden");
+activeDiv.classList.replace("active", "alert"); */
+//------------------------------
+
+/* let frogImg = document.querySelector("#greenFrog");
+
+console.log(frogImg.id);
+console.log(frogImg.className);
+console.log(frogImg.alt);
+console.log(frogImg.title);
+console.log(frogImg.src);
+// console.log(frogImg.data-frog);  // не получится
+
+frogImg.title = "Новый текст подсказки";
+console.log(frogImg.getAttribute('src'));
+console.log(frogImg.getAttribute('data-frog'));  // получится
+
+frogImg.setAttribute("src", "4.jpg");
+// frogImg.removeAttribute("src");
+
+console.log(frogImg.hasAttribute("src")); */
