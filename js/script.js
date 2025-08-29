@@ -1612,3 +1612,368 @@ frogImg.setAttribute("src", "4.jpg");
 // frogImg.removeAttribute("src");
 
 console.log(frogImg.hasAttribute("src")); */
+
+// Занятие 10 (25.08.2025)------------------------------------
+
+//for DZ
+/* let spans = document.querySelectorAll(".remove-button");
+
+// for (let i=0; i < spans.length; i++){
+//     spans[i].addEventListener("click", function(){
+//         // spans[i].remove();
+//         this.parentNode.remove();
+//     });
+// }
+
+
+for (let i=0; i < spans.length; i++){
+    spans[i].addEventListener("click", () => //Не использовать со стрелочной функцией
+        // spans[i].remove();
+        this.parentNode.remove()
+    );
+} */
+
+//***************************** */
+/* document.form1.style.background = "silver";  // name='form1'
+document.forms[0].style.padding = "16px";
+document.forms['form1'].style.margin = "20px";
+document.forms.form1.style.border = "2px dotted grey";
+
+document.form1.name1.style.color = "blue";
+document.form1["name1"].style.background = "agua";  // если присутствует дефис в "name"
+
+let but = document.querySelector("button");
+let txt = document.querySelector("#text1")
+
+but.addEventListener("click", content);
+
+function content(){
+    // alert(txt.value);
+    console.log(txt.value);
+} */
+//***************************** */
+
+// let input = document.querySelectorAll("input");
+// let form1 = document.forms.form1;
+
+// console.log(input.length);
+// console.log(form1.length);
+
+// for (let i = 0; i < form1.length; i++) {
+//     input[i].addEventListener("click", checkAll);
+// }
+
+// let num;
+// function checkAll() {
+//     num = 0;
+//     for (let i = 0; i < form1.length; i++) {
+//         if (input[i].checked && input[i].type == 'checkbox') {
+//             num++
+//         }
+//     }
+//     if (num == 3) {
+//         for (let i = 0; i < form1.length; i++) {
+//             if (!input[i].checked && input[i].type == 'checkbox') {
+//                 input[i].disabled = true;
+//             }
+//         }
+//     } else {
+//         for (let i = 0; i < form1.length; i++) {
+//             input[i].disabled = false;
+//         }
+//     }
+//     console.log(num);
+// }
+
+// ***********************
+
+/* let input = document.querySelectorAll("input[type='checkbox']");
+let form1 = document.forms.form1;
+
+console.log(input.length);
+console.log(form1.length);
+
+for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener("click", checkAll);
+}
+
+let num;
+function checkAll() {
+    num = 0;
+    for (let i = 0; i < input.length; i++) {
+        if (input[i].checked && input[i].type == 'checkbox') {
+            num++
+        }
+    }
+    if (num == 3) {
+        for (let i = 0; i < input.length; i++) {
+            if (!input[i].checked && input[i].type == 'checkbox') {
+                input[i].disabled = true;
+            }
+        }
+    } else {
+        for (let i = 0; i < input.length; i++) {
+            input[i].disabled = false;
+        }
+    }
+    console.log(num);
+} */
+
+
+
+// --------------------------------------
+
+// let choose = document.querySelector("input[type='button']");
+
+// choose.addEventListener("click", chooseColor);
+
+// function chooseColor(){
+//     let f = document.form3.radio2;
+
+//     console.log(f.length)
+
+//     // for(let i=0; i < f.length; i++){
+//     //     if(f[i].checked){
+//     //         document.body.style.background = f[i].value;
+//     //     }
+//     // }
+//     document.body.style.background = f.value;
+
+// }
+
+// ----------DZ-----------------------
+// chwckbox загадки
+// ----------DZ-----------------------
+// ---------------------------------------------------
+// Свойства select:
+
+/* 
+select.option - коллекция из подэлементов <option> (массив)
+select.value - значение выбранного в данный момент <option>
+select.selectedIndex - номер выбранного <option> (индекс)
+ */
+
+/* let city = document.querySelector("#city");
+
+city.addEventListener("change", setImage);
+
+function setImage() {
+    let cities = city.selectedIndex;  // Индекс
+    // console.log(cities);
+    let options = city.options;  // массив
+    // console.log(options);
+    let code = options[cities].value;
+    // console.log(options);
+
+    let div = document.querySelector("#image");
+    div.innerHTML = "<img src='img/" + code + ".png'>"
+
+} */
+
+// ---------------------------------------------------
+
+/* let gas = document.querySelectorAll(".petrol");
+
+for (let i = 0; i < gas.length; i++) {
+    gas[i].addEventListener("click", function () {
+        let gallons = document.querySelector(".gallons").value;
+        let amount = gas[i].getAttribute("data-price");
+        let res = gallons * amount;
+        let sum = document.querySelector(".sum");
+        sum.innerHTML = res;
+        // console.log(res);
+    });
+}
+
+console.log(5+3); */
+
+// ---------------------------------------------------
+
+// let reg = document.querySelector(".register");
+
+// reg.addEventListener("submit", function () {
+//     // alert("Заработал");
+//     let login = reg.login.value;
+//     let psd1 = reg.password1.value;
+//     let psd2 = reg.password2.value;
+
+//     if (!(login && psd1 && psd2)) {
+//         alert("Все поля должны быть заполнены");
+//     }
+//     if (psd1 != psd2) {
+//         alert("Пароли не совпадают");
+//     }
+//     if (psd1.length < 6) {
+//         alert("Слишком короткий пароль");
+//     }
+// });
+
+// ---------------------------------------------------
+
+// Lesson 11 _JavaScript_ (order DZ_55)
+
+/* 
+search() -  возвращает позицию, на которойрегулярное выражение совпадает с вызывающей строкой. Возвращает -1, если совпадение не найдено
+
+match() - получить все совпадения с регулярными выражениями
+
+replace() - поиск и замена
+
+split() - делит строку на массив, разбивая её по указанной подстроке
+
+test() - выполняет поиск совпадений регулярного выражения со строкой.
+Возвращает true или false
+*/
+
+// let regexp = new RegExp("...");
+// let regexp1 = /шаблон/;
+// let regexp2 = /шаблон/gmi;
+
+// let str = "Я ищу совпадения в 2025 году. ищу Hello Ёжик 1234 56789";
+// // let exp = /ищу/g;
+// document.writeln(str + "<br>");
+// document.writeln(str.search(exp) + "<br>");
+// document.writeln(str.match(exp) + "<br>");
+// document.writeln(exp.test(str) + "<br>");
+
+// [...] - искать любой из заданных символов, но только один раз(один символ)
+// let exp = /[0256]/g;
+// document.writeln(str.match(exp) + "<br>");
+
+/* Флаги
+g (global) - глобальный поиск
+i (ignoreCase) - регистронезависимый поиск
+m (multiline) - многострочный поиск
+*/
+
+/* Диапазоны
+[0-9] - одна любая цифра ([3-7]), какой укажем
+[A-Z] - заглавные буквы
+[a-z] - строчные буквы
+[A-Za-z] - полный диапазон в любом регистре - English
+[А-Я] - заглавные буквы
+[а-я] - строчные буквы
+[А-яЁё] - полный диапазон в любом регистре - русские
+*/
+
+// let exp = /[0-9]/gi;  // Одна любая цифра в диапазоне от 0 до 9 (зесь)
+// document.writeln(str.match(exp) + "<br>");
+
+// [^abc] - исключающий диапазон, ни один из указанных символов
+// let exp = /[^0-9]/g;  // Одна любая цифра в диапазоне от 0 до 9 (зесь)
+// document.writeln(str.match(exp) + "<br>");
+
+/* 
+{3} - количество символов, идущих подряд
+{1,} - от 1 до любого кол-ва повторений
+{2,5} - от 2 до 5 повторений
+*/
+
+// let exp = /[0-9]{2,3}/g;
+// document.writeln(str.match(exp) + "<br>");
+
+/* let html = `
+    <table>
+        <tr>
+            <td bgcolor="#CCC">
+                <img src="222.png"
+            </td>
+            <td bgcolor="#003399">
+                <img src="1f3.png"
+            </td>
+            <td bgcolor="#00ccdd">
+                <img src="FFF.png"
+            </td>
+        </tr>
+    </table>
+`;
+
+let reg = /#([0-9a-f]{3}){1,2}/gi;
+document.writeln(html.match(reg) + "<br>"); */
+
+/* 
+\d (digit) - любая цифра
+\s (space) - пробельный символ, включая табуляцию и перевод строки
+\w (word) - любая цифра, буква (только английский алфавит, регистронезависимый) или символ подчёркивания
+*/
+
+// let exp = /\w/g;
+// document.writeln(str.match(exp) + "<br>");
+
+/* 
+\D - всё кроме цифр
+\S - не пробельный символ, включая табуляцию и перевод строки
+\W - све кроме цифр, букв или символов подчёркивания
+*/
+
+// let exp = /\D/g;
+// document.writeln(str.match(exp) + "<br>");
+
+/* 
+^ - начало строки (перед последовательностью ничего не должно быть)
+$ - конец строки (после последовательности ничего не должно быть)
+*/
+
+// str = "909fgdfg";  // "909fgdfg"
+// let exp = /^\d{3}$/g;
+// document.writeln(str.match(exp) + "<br>");
+
+// точка - один любой символ
+
+// let exp = /\d.\d/g;
+// document.writeln(str.match(exp) + "<br>");
+
+/* 
++ - от 1 до любого количества повторений {1,}
+* - от 0 до любого количества повторений {0,}
+? - от 0 до 1 повторения {0,1}
+*/
+
+// let exp = /\d+/g;
+// document.writeln(str.match(exp) + "<br>");
+
+
+/* let html = `
+    <p>Text
+        <img src="222.jpg">
+        <img src="dfsdf222.jpg">
+        <span>else. New Text</span>
+        <img src="RRR.jpeg">
+        <img src="uio.gif">
+    </p>
+`;
+
+let exp = /(\w+)\.(gif|jpg|jpeg|png|bmp)/g;
+document.writeln(html.match(exp) + "<br>"); */
+
+// document.writeln("aaa".replace('a', 'b') + "<br>");
+// document.writeln("aaa".replace(/a/g, 'b') + "<br>");
+
+// ----------------
+/* let text = "I kill you block dog";
+document.writeln(text + "<br>");
+
+let exp = /(book|kill|block)/ig;
+text = text.replace(exp, "***");
+document.writeln("<p>" + text + "</p>"); */
+// ----------------
+
+/* let text = "John Smith";
+// let exp = /(John) Smith/;
+// document.writeln(text.match(exp) + "<br>");
+
+let exp = /(\w+)\s(\w+)/;
+document.writeln(text.replace(exp, "$2 && $1") + "<br>"); */
+// ----------------
+
+/* let text = "red color: #F00 and green: #090"
+document.writeln(text + "<br>");
+let exp = /(#[a-f0-9]{3})/ig;
+text = text.replace(exp, "<span style='color:$1'>$1</span>")
+document.writeln("<p>" + text + "</p>"); */
+// ----------------
+/* let text = "I like yandex.ru";
+document.writeln(text + "<br>");
+let exp = /(([a-z0-9-]{2,}\.)+[a-z]{2,4})/i;
+text = text.replace(exp, "<a href='https://$1'>$1</a>")
+document.writeln("<p>" + text + "</p>"); */
