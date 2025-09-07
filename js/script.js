@@ -1613,7 +1613,7 @@ frogImg.setAttribute("src", "4.jpg");
 
 console.log(frogImg.hasAttribute("src")); */
 
-// Занятие 10 (25.08.2025)------------------------------------
+// Lesson (Занятие) 10 (25.08.2025)-- (order DZ_55)----------------------------------
 
 //for DZ
 /* let spans = document.querySelectorAll(".remove-button");
@@ -1762,15 +1762,15 @@ city.addEventListener("change", setImage);
 
 function setImage() {
     let cities = city.selectedIndex;  // Индекс
-    // console.log(cities);
+    console.log(cities);
     let options = city.options;  // массив
-    // console.log(options);
+    console.log(options);
     let code = options[cities].value;
-    // console.log(options);
+    console.log(code);
 
     let div = document.querySelector("#image");
-    div.innerHTML = "<img src='img/" + code + ".png'>"
-
+    div.innerHTML = "<img src='img/" + code + ".png'>";
+    console.log(div);
 } */
 
 // ---------------------------------------------------
@@ -1780,10 +1780,10 @@ function setImage() {
 for (let i = 0; i < gas.length; i++) {
     gas[i].addEventListener("click", function () {
         let gallons = document.querySelector(".gallons").value;
-        let amount = gas[i].getAttribute("data-price");
+        let amount = gas[i].getAttribute("data-price");  // получить пользовательский атрибут
         let res = gallons * amount;
         let sum = document.querySelector(".sum");
-        sum.innerHTML = res;
+        sum.innerHTML = res.toFixed(2);  // Math.round(res)  res.toFixed(2)
         // console.log(res);
     });
 }
@@ -1792,28 +1792,28 @@ console.log(5+3); */
 
 // ---------------------------------------------------
 
-// let reg = document.querySelector(".register");
+/* let reg = document.querySelector(".register");
 
-// reg.addEventListener("submit", function () {
-//     // alert("Заработал");
-//     let login = reg.login.value;
-//     let psd1 = reg.password1.value;
-//     let psd2 = reg.password2.value;
+reg.addEventListener("submit", function () {
+    // alert("Заработал");
+    let login = reg.login.value;
+    let psd1 = reg.password1.value;
+    let psd2 = reg.password2.value;
 
-//     if (!(login && psd1 && psd2)) {
-//         alert("Все поля должны быть заполнены");
-//     }
-//     if (psd1 != psd2) {
-//         alert("Пароли не совпадают");
-//     }
-//     if (psd1.length < 6) {
-//         alert("Слишком короткий пароль");
-//     }
-// });
+    if (!(login && psd1 && psd2)) {  // логин/пароль/подтверждение
+        alert("Все поля должны быть заполнены");
+    }
+    if (psd1 != psd2) {
+        alert("Пароли не совпадают");
+    }
+    if (psd1.length < 6) {
+        alert("Слишком короткий пароль");
+    }
+}); */
 
 // ---------------------------------------------------
 
-// Lesson 11 _JavaScript_ (order DZ_55)
+// Lesson 11 _JavaScript_ (order DZ_56)
 
 /*
 search() -  возвращает позицию, на которойрегулярное выражение совпадает с вызывающей строкой. Возвращает -1, если совпадение не найдено
@@ -1832,7 +1832,7 @@ test() - выполняет поиск совпадений регулярног
 // let regexp1 = /шаблон/;
 // let regexp2 = /шаблон/gmi;
 
-// let str = "Я ищу совпадения в 2025 году. ищу Hello Ёжик 1234 56789";
+// let str = "Я ищу совпадения в 2025 году. ищу Hello Ёжик 1234 56789_";
 // // let exp = /ищу/g;
 // document.writeln(str + "<br>");
 // document.writeln(str.search(exp) + "<br>");
@@ -1862,7 +1862,7 @@ m (multiline) - многострочный поиск
 // let exp = /[0-9]/gi;  // Одна любая цифра в диапазоне от 0 до 9 (зесь)
 // document.writeln(str.match(exp) + "<br>");
 
-// [^abc] - исключающий диапазон, ни один из указанных символов
+// [^abc] - исключающий диапазон, ни один из указанных символов (уточнить?)
 // let exp = /[^0-9]/g;  // Одна любая цифра в диапазоне от 0 до 9 (зесь)
 // document.writeln(str.match(exp) + "<br>");
 
@@ -1872,8 +1872,9 @@ m (multiline) - многострочный поиск
 {2,5} - от 2 до 5 повторений
 */
 
-// let exp = /[0-9]{2,3}/g;
-// document.writeln(str.match(exp) + "<br>");
+// let exp = /[0-9]{2,3}/g;  // {2,3}? - знак "?" означает приоритет малой цифры
+// document.writeln("<br>" + str.match(exp) + "<br>");
+
 
 /* let html = `
     <table>
@@ -1890,8 +1891,8 @@ m (multiline) - многострочный поиск
         </tr>
     </table>
 `;
-
-let reg = /#([0-9a-f]{3}){1,2}/gi;
+// #{1,2} => <td bgcolor="##003399">
+let reg = /#{1,2}([0-9a-f]{3}){1,2}/gi;
 document.writeln(html.match(reg) + "<br>"); */
 
 /*
@@ -1900,16 +1901,16 @@ document.writeln(html.match(reg) + "<br>"); */
 \w (word) - любая цифра, буква (только английский алфавит, регистронезависимый) или символ подчёркивания
 */
 
-// let exp = /\w/g;
+// let exp = /\s\w+/g;  // .\s\d
 // document.writeln(str.match(exp) + "<br>");
 
 /*
 \D - всё кроме цифр
 \S - не пробельный символ, включая табуляцию и перевод строки
-\W - све кроме цифр, букв или символов подчёркивания
+\W - все кроме цифр, букв или символов подчёркивания
 */
 
-// let exp = /\D/g;
+// let exp = /\D/g;  //  \.\s.
 // document.writeln(str.match(exp) + "<br>");
 
 /*
@@ -1917,7 +1918,7 @@ document.writeln(html.match(reg) + "<br>"); */
 $ - конец строки (после последовательности ничего не должно быть)
 */
 
-// str = "909fgdfg";  // "909fgdfg"
+// str = "909";  // "909fgdfg"  'fgdfg'
 // let exp = /^\d{3}$/g;
 // document.writeln(str.match(exp) + "<br>");
 
@@ -1932,9 +1933,10 @@ $ - конец строки (после последовательности н�
 ? - от 0 до 1 повторения {0,1}
 */
 
-// let exp = /\d+/g;
-// document.writeln(str.match(exp) + "<br>");
-
+// let exp = /\d+/g;  // let exp = /\d*/g;
+// document.writeln("<br>" + str.match(exp) + "<br>");
+// document.writeln(str.length + "<br>");
+// ,,,,,,,,,,,,,,,,,,,2025,,,,,,,,,,,,,,,,,,,,,,,1234,,56789,,
 
 /* let html = `
     <p>Text
@@ -1949,9 +1951,9 @@ $ - конец строки (после последовательности н�
 let exp = /(\w+)\.(gif|jpg|jpeg|png|bmp)/g;
 document.writeln(html.match(exp) + "<br>"); */
 
-// document.writeln("aaa".replace('a', 'b') + "<br>");
-// document.writeln("aaa".replace(/a/g, 'b') + "<br>");
-
+// document.writeln("aaa".replace('a', 'b') + "<br>"); // без шаблона рег. выр.
+// document.writeln("aaa".replace(/a/g, 'b') + "<br>"); // с шаблоном рег. выр.
+//Так. обр-м с шаблоном регуляр. выражения с 'g' - поиск/замена по всей стр.
 // ----------------
 /* let text = "I kill you block dog";
 document.writeln(text + "<br>");
@@ -1980,3 +1982,529 @@ document.writeln(text + "<br>");
 let exp = /(([a-z0-9-]{2,}\.)+[a-z]{2,4})/i;
 text = text.replace(exp, "<a href='https://$1'>$1</a>")
 document.writeln("<p>" + text + "</p>"); */
+// ----------------
+
+// Lesson 12 _JavaScript_ (order DZ_57)
+
+// for DZ_56 (js_11)----------------
+/* let but = document.querySelector("input[type='button']");
+but.addEventListener("click", smsUser);
+
+function smsUser(){
+    let sms = document.querySelector("textarea").value;
+    let name = document.querySelector("input[type='text']").value;
+    let regExpBBMail = /([0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3})/ig;
+    sms = sms.replace(regExpBBMail, "<span style='color: red'>$1</span>");
+    // document.writeln(`
+    //     <fieldset>
+    //         <legend>${name}</legend>
+    //         <div>${sms}</div>
+    //     </fieldset>
+    // `);
+    let form = document.querySelector("form");
+    form.insertAdjacentHTML("beforeend", `<fieldset>
+        <legend>${name}</legend>
+        <div>${sms}</div>
+        </fieldset>`)
+} */
+// ----------------
+
+// let str = "   текст   ";  // начало, конец(пробелы)
+// str = str.replace(/^\s+|\s+$/g, "");
+// alert(">" + str + "<");
+
+
+// let str = " +7 999 123 45 78   ";  // везде
+// str = str.replace(/\s+/g, "");
+// alert(">" + str + "<");
+
+// let str = " +7 (999) 123-45-78   ";  // начало, конец и лишние символу удалили
+// str = str.replace(/[\s()-]+/g, "");
+// alert(">" + str + "<");
+
+// let str = " +7 999 123 45 78   ";
+// let str = "01-09-2025 01.09.2025";
+// let re = str.split(/[-./\s]/);
+// document.writeln(re + "<br>");  // Выводит массив через запятые
+// console.log(re);
+// ----------------
+
+/* Типы данных 
+- number
+- string
+- boolean
+- null (object) 
+- undefined
+
+- Object
+*/
+// ----------------
+
+// let car = new Object();  // Объектно-ориентированный подход
+// let car1 = {};  // Литеральный подход
+
+// let car = new Object();
+// car["type-brand"] = "BMW";  // car[10] = "BMW"; в любом случае неявное преобр-е в строку
+// car["color"] = "white";
+// document.writeln(car["type-brand"] + " " + car["color"]);
+// alert(car);
+
+// let car = new Object();
+// car.type = "BMW";
+// car.color = "white";
+// document.writeln(car.type + " " + car.color);
+// console.log(car);
+
+//-----------
+// let menu1 = {};  // Литеральный подход
+// menu1.width = 300;
+// menu1.height = 200;
+// menu1.title = "Menu";
+// document.writeln(menu1.title + ": " + menu1.width + " x " + menu1.height + "<br>");
+
+// console.log(menu1);
+
+/* let menu = {
+    "width": 300,
+    height: 200,
+    title: "Menu",
+};
+
+// delete(menu.width);
+delete menu.width;
+
+// document.writeln(menu.title + ": " + menu.width + " x " + menu.height + "<br>");
+let count = 0;
+menu.age = 25;
+for (let i in menu) {
+    document.writeln(i + ": " + menu[i] + "<br>");
+    count++;
+}
+
+console.log(menu);  // .menu.length - нет для объектов
+console.log("count:", count);
+
+// document.writeln("Имена ключей: " + Object.keys(menu));
+// document.writeln("<br>Всего ключей: " + Object.keys(menu).length);
+
+
+// Object.keys(menu).forEach(function(key){
+//     document.writeln("<br>" + key + ": " + menu[key])
+// });
+
+Object.keys(menu).forEach((key) => document.writeln("<br>" + key + ": " + menu[key])); */
+
+//---------------------------
+
+// let car = {
+//     name: "Volvo",
+//     year: 2019,
+// };
+
+// console.log(car);
+
+/* let obj = {
+    name: "Гомер",
+    colors: {
+        first: "green",
+        second: "blue"
+    },
+    color: [
+        "black",
+        "white",
+        "red",
+        "blue"
+    ],
+    hello: function () {
+        document.writeln("Привет");
+    }
+} */
+
+// // let mas2 = obj.colors.map(function(elem){
+// let mas2 = Object.keys(obj.colors).map(function(elem){
+//     return elem + ": " + obj.colors[elem] + "<br>";
+// });
+
+// document.writeln("<br>" + mas2 + "<br>");
+// console.log(mas2);
+
+// let mas = obj.color.map(function(elem, index, all){
+//     return "<br>" + elem + " " + index + " массив: " + all;
+// });
+
+// document.writeln("<br>" + mas + "<br>");
+
+// let mas1 = obj.color.map(elem => elem.toUpperCase());
+// document.writeln("<br>" + mas1 + "<br>");
+
+// let fil = obj.color.filter(function(elem){
+//     return elem.length < 5;
+// });
+
+// document.writeln("<br>" + fil + "<br>");
+
+// document.writeln(obj.name + " " + obj.colors.first + " " + obj.color[1]);
+// obj.hello();
+
+
+// let calc = {
+//     num1: 5,
+//     num2: 10,
+//     calculate: function(){
+//         this.result = this.num1 * this.num2;
+//         // calc.result = calc.num1 * calc.num2;
+//     }
+// }
+
+// calc.calculate();  // метод, как-бы, как экземпляр объекта
+// document.writeln(calc.result + "<br>");
+// document.writeln(calc.num1);
+
+// -----------------
+/* let x = 15, y = 10;
+
+// let coords = {
+//     x: x,
+//     y: y,
+//     calcSq: function(){
+//         document.writeln(this.x * this.y);
+//     }
+// }
+
+// let coords = {
+//     x, y,
+//     calcSq(){
+//         document.writeln(this.x * this.y);
+//     }
+// }
+
+// coords.calcSq(); */
+// -----------------
+
+// Функция конструктора
+
+/* function Car(name, year) {
+    this.name = name;
+    this.year = year;
+}
+
+Car.prototype.getAge = function (){
+    return new Date().getFullYear() - this.year;
+}
+
+Car.prototype.color = "black";
+
+let ford = new Car("Ford", 2019);
+console.log(ford);
+console.log(ford.getAge());
+ford.color = "red";
+console.log(ford.color);
+
+
+let bmw = new Car("BMW", 2017);
+console.log(bmw);
+console.log(bmw.getAge()); */
+// -----------------
+
+/* function User(pName, pAge){
+    this.name = pName;
+    this.age = pAge;
+
+    this.displayInfo = function(){
+        document.writeln("Имя: " + this.name + "; возраст: " + this.age + "<br>");
+    }
+}
+
+let tom = new User("Tom", 26);
+tom.displayInfo(); */
+
+// ---------- Занятие lesson 13 --------
+
+// Деструктуризация
+
+// let user = {
+//     login: {
+//         firstName: "Kate",
+//         lastName: "Pavlova"
+//     },
+//     password: "qwerty",
+//     role: "quest"
+// }
+
+// let {login: {firstName: f, lastName: l}, password, role} = user;
+// document.writeln(f + " " + l + " " + password + " " + role);
+// let {login: {firstName: f, lastName: l}, ...rest} = user;
+
+// document.writeln(f + " " + l + " " + rest.password + " " + rest.role
+//     + "<br>");
+// rest.password = "123";
+// document.writeln(f + " " + l + " " + rest.password + " " + rest.role
+// + "<br>");
+
+// document.writeln(f + " " + l + " " + user.password + " " + user.role
+//     + "<br>");
+
+// let {role, ...rest} = user;
+// document.writeln(role);
+// let {role} = user;
+// document.writeln(role);
+
+/* let number = [3, 5, 6];
+// let [a, b, c] = number;
+// document.writeln(a + " " + b + " " + c);
+let [, , c] = number;
+document.writeln(c); */
+
+//-------------------
+// let pers = {
+//     name: "Игорь",
+//     colors: [
+//         "красный",
+//         "белый",
+//         "синий",
+//         "чёрный"
+//     ],
+//     brand: "Bentley",
+//     start(){
+//         let {name, colors, brand} = this;
+//         let color = Math.floor(Math.random() * 4);
+//         document.writeln(name + " выиграл " + colors[color] + " " + " " + brand);
+//     }
+// }
+// // До деструктуризации: (после выше - this)
+//     /* start: function(){
+//         let color = Math.floor(Math.random() * 4);
+//         document.writeln(this.name + " выиграл " + this.colors[color] + " " + " " + this.brand);
+//     } */
+
+// pers.start();
+//-------------------
+
+// let form = document.form1;
+// form.addEventListener("submit", event => {  // (event) - одно название без ()
+//     event.preventDefault();  // Отменяет действие тега, который совершается
+//     // по умолчанию
+//     let title = form.title.value;
+//     let text = form.text.value;
+//     let description = form.description.value;
+
+//     // alert("Работает");
+//     // console.log(title, text);
+//     // saveForm({title: title, text: text});
+//     saveForm({title, text, description});
+
+// });
+
+// function saveForm(obj){
+//     let formData = {
+//         date: new Date().toLocaleDateString(),
+//         ...obj
+//     }
+//     console.log("formData:", formData);
+// }
+
+// function saveForm({title, text, description}){
+//     let formData = {
+//         date: new Date().toLocaleDateString(),
+//         title, text, description
+//     }
+//     console.log("formData:", formData);
+// }
+
+// function saveForm(obj){
+//     let {title, text, description} = obj;
+//     let formData = {
+//         date: new Date().toLocaleDateString(),
+//         title, text, description
+//         // title: title,
+//         // text: text,
+//         // description: description
+//     }
+//     console.log("formData:", formData);
+// }
+
+// class User {
+
+//     constructor(name){
+//         this.name = name;
+//     }
+
+//     sayHi(){
+//         document.writeln("Hello, " + this.name + "!");
+//     }
+// }
+
+// let user = new User("Igor");
+// // console.log(user);
+// user.sayHi();
+
+// console.log(typeof User);
+// console.log(typeof user);
+
+//-------------------
+/* class User {
+
+    constructor(login){
+        this._login = login;
+    }
+
+    get login(){
+        return this._login;
+    }
+
+    set login(value){
+        if(value.length < 6){
+            alert("Логин слишком короткий");
+            return;
+        }
+        this._login = value;
+    }
+}
+
+let user = new User("administrator");
+alert(user.login);
+user.login = "admin_admin";
+alert(user.login);
+user.login = "admin";
+alert(user.login); */
+//-------------------
+
+/* class Person {
+    constructor(firstName, lastName){
+        this._firstName = firstName;
+        this._lastName = lastName;
+    }
+
+    get fullName(){
+        return this._firstName + " " + this._lastName
+    }
+
+    set fullName(value){
+        [this._firstName, this._lastName] = value.split(/\s+/g);
+    }
+}
+
+let people = new Person("John", "Dou");
+document.writeln(people.fullName + "<br>");
+people.fullName = "Anna Petrova";
+document.writeln(people.fullName + "<br>"); */
+
+// console.log("Фттф Петрова".split(/\s+/g));
+//-------------------
+
+/* class Animal{
+    static count = 0;
+
+    constructor(name){
+        this.speed = 0;
+        this.name = name;
+        Animal.count++;
+    }
+
+    static counter(){
+        return Animal.count;
+        // document.writeln(`${this.}`)
+    }
+
+    run(speed){
+        this.speed = speed;
+        document.writeln(`${this.name} бежит со скоростью ${this.speed} км/ч.<br>`);
+    }
+
+    stop(){
+        this.speed = 0;
+        document.writeln(`${this.name} стоит.<br>`)
+    }
+}
+
+class Rabbit extends Animal{
+
+    constructor(name, earLength){
+        super(name);
+        this.earLength = earLength;
+    }
+
+    hide(){
+        document.writeln(`${this.name} прячется! <br>`);
+    }
+
+    stop(){
+        super.stop();
+        this.hide();
+    }
+}
+
+let animal = new Animal("Мой питомец");
+animal.run(80);
+animal.stop();
+
+document.writeln(`<br>`);
+
+let rabbit = new Rabbit("Белый кролик", 10);
+rabbit.run(5);
+rabbit.hide();
+rabbit.stop();
+
+document.writeln(rabbit.name + `<br>`);
+document.writeln(rabbit.earLength + `<br>`);
+
+let animal2 = new Animal("Мой питомец 2");
+let animal3 = new Animal("Мой питомец 3");
+let animal4 = new Animal("Мой питомец 4");
+
+document.writeln(Animal.counter());
+document.writeln(Rabbit.counter()); */
+//-------------------
+
+/* class Header{
+    constructor(img, h1, h2){
+        this.src = img;
+        this.h1 = h1;
+        this.h2 = h2;
+        this.out = "";
+    }
+
+    render(id){
+        this.out = `
+        <img src="${this.src}" alt="">
+        <h1>${this.h1}</h1>
+        <h2>${this.h2}</h2>
+        `;
+
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+
+class HeaderExt extends Header{
+    constructor(img, h1, h2, tel){
+        super(img, h1, h2);
+        this.tel = tel;
+    }
+
+    render(id){
+        super.render(id);
+        this.out += `
+            <h3>${this.tel}</h3>
+        `;
+
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+
+let img = "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/233_Node_Js_logo-128.png";
+
+let header = new Header(img, "Заголовок", "Описание");
+header.render("header");
+
+let img2 = "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-128.png";
+
+let header2 = new Header(img2, "второй заголовок", "второе описание");
+header2.render("header2"); 
+
+let img3 = "https://cdn3.iconfinder.com/data/icons/font-awesome-brands/512/node-js-128.png";
+
+let header3 = new HeaderExt(img3, "Заголовок в наследнике", "Описание в классе", "+7 999 123-45-67");
+header3.render("header-ext"); */
+
+// ---------- Занятие lesson 14 --------
+
