@@ -2010,19 +2010,21 @@ function smsUser(){
 // ----------------
 
 // let str = "   текст   ";  // начало, конец(пробелы)
-// str = str.replace(/^\s+|\s+$/g, "");
-// alert(">" + str + "<");
-
-
-// let str = " +7 999 123 45 78   ";  // везде
+// // str = str.replace(/^\s+|\s+$/g, "");
 // str = str.replace(/\s+/g, "");
 // alert(">" + str + "<");
 
-// let str = " +7 (999) 123-45-78   ";  // начало, конец и лишние символу удалили
-// str = str.replace(/[\s()-]+/g, "");
-// alert(">" + str + "<");
 
-// let str = " +7 999 123 45 78   ";
+/* let str = " +7 999 123 45 78   ";  // везде
+str = str.replace(/\s+/g, "");
+// str = str.replace(/^\s+|\s+$/g, "");
+alert(">" + str + "<"); */
+
+/* let str = " +7 (999) 123-45-78   ";  // везде лишние символы удалили
+str = str.replace(/[\s()-]+/g, "");
+alert(">" + str + "<"); */
+
+// // let str = " +7 999 123 45 78   ";
 // let str = "01-09-2025 01.09.2025";
 // let re = str.split(/[-./\s]/);
 // document.writeln(re + "<br>");  // Выводит массив через запятые
@@ -2054,6 +2056,7 @@ function smsUser(){
 // car.color = "white";
 // document.writeln(car.type + " " + car.color);
 // console.log(car);
+// console.log(car1);
 
 //-----------
 // let menu1 = {};  // Литеральный подход
@@ -2120,11 +2123,10 @@ Object.keys(menu).forEach((key) => document.writeln("<br>" + key + ": " + menu[k
     }
 } */
 
-// // let mas2 = obj.colors.map(function(elem){
+// let mas2 = obj.colors.map(function(elem){
 // let mas2 = Object.keys(obj.colors).map(function(elem){
 //     return elem + ": " + obj.colors[elem] + "<br>";
 // });
-
 // document.writeln("<br>" + mas2 + "<br>");
 // console.log(mas2);
 
@@ -2171,14 +2173,14 @@ Object.keys(menu).forEach((key) => document.writeln("<br>" + key + ": " + menu[k
 //     }
 // }
 
-// let coords = {
-//     x, y,
-//     calcSq(){
-//         document.writeln(this.x * this.y);
-//     }
-// }
+let coords = {
+    x, y,
+    calcSq(){
+        document.writeln(this.x * this.y);
+    }
+}
 
-// coords.calcSq(); */
+coords.calcSq(); */
 // -----------------
 
 // Функция конструктора
@@ -2206,7 +2208,7 @@ console.log(bmw);
 console.log(bmw.getAge()); */
 // -----------------
 
-/* function User(pName, pAge){
+function User(pName, pAge){
     this.name = pName;
     this.age = pAge;
 
@@ -2216,7 +2218,7 @@ console.log(bmw.getAge()); */
 }
 
 let tom = new User("Tom", 26);
-tom.displayInfo(); */
+tom.displayInfo();
 
 // ---------- Занятие lesson 13 --------
 
@@ -2506,5 +2508,416 @@ let img3 = "https://cdn3.iconfinder.com/data/icons/font-awesome-brands/512/node-
 let header3 = new HeaderExt(img3, "Заголовок в наследнике", "Описание в классе", "+7 999 123-45-67");
 header3.render("header-ext"); */
 
-// ---------- Занятие lesson 14 --------
+// ---------- Занятие lesson 14 ----_JavaScript_ (order DZ_59)--------
 
+/* class Header{
+    constructor(img, h1, h2){
+        this.src = img;
+        this.h1 = h1;
+        this.h2 = h2;
+        this.out = "";
+    }
+
+    render(id){
+        this.out = `
+        <img src="${this.src}" alt="">
+        <h1>${this.h1}</h1>
+        <h2>${this.h2}</h2>
+        `;
+
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+
+class HeaderExt extends Header{
+    constructor(img, h1, h2, tel){
+        super(img, h1, h2);
+        this.tel = tel;
+    }
+
+    get tel(){
+        return this._tel;
+    }
+
+    set tel(t){
+        let reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        if(reg.test(t)){
+            this._tel = t;
+        } else {
+            alert("Некорректный номер телефона");
+            return;
+        }
+    }
+
+    render(id){
+        super.render(id);
+        this.out += `
+            <h3>${this.tel}</h3>
+        `;
+
+        document.querySelector(`#${id}`).innerHTML = this.out;
+    }
+}
+
+let img = "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/233_Node_Js_logo-128.png";
+
+let header = new Header(img, "Заголовок", "Описание");
+header.render("header");
+
+let img2 = "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-128.png";
+
+let header2 = new Header(img2, "второй заголовок", "второе описание");
+header2.render("header2"); 
+
+let img3 = "https://cdn3.iconfinder.com/data/icons/font-awesome-brands/512/node-js-128.png";
+
+let header3 = new HeaderExt(img3, "Заголовок в наследнике", "Описание в классе", "+7 999 123-45-67");
+// ------------
+
+// header3.tel = "Hello";
+header3.tel = "+7 999 123-45-67";
+
+header3.render("header-ext"); */
+
+//-----------------------------------------
+
+// let info = '{"first_name":"Ivan","age":36,"mather":{"name":"Olga"},"children":["Kate","Igor","Misha"],"married":true,"dog":null}';
+// console.log(info);
+
+
+// JSON.stringify - преобразует объект JS в JSON (сериализация)
+// JSON.parse - преобразует объект JSON в JS (десериализация)
+// AJAX :
+// Asyncronus
+// JavaScrtipt
+// AND
+// XML (JSON)
+
+// let person = JSON.parse(info);
+// console.log(person);
+
+// person.first_name = "Petr";
+
+// delete(person.age);
+
+// person.work = "programmer";
+
+// // delete(person.children[1]);  // просто чистит
+// person.children.splice(1,1);
+// person.children.push("Ira");
+
+// for (let i in person){
+//     document.writeln(i + ": " + person[i] + "<br>");
+// }
+
+// let personString = JSON.stringify(person);
+// console.log(personString);
+
+// let request = new XMLHttpRequest();
+// request.open("GET", "data.txt");  // (method, url, async, login, password)
+
+// request.send();
+// request.onreadystatechange = function(){
+//     if((request.readyState == 4) && (request.status == 200)){
+//         document.writeln(request.response);
+//     }
+// }
+
+// ---------- Занятие lesson 15 ----_JavaScript_ (order DZ_60)--------
+
+// ....
+
+// let a = "global";
+// function outer(){
+//     let b = "outer";
+//     function inner(){
+//         let c = "inner";
+//         console.log("c", c);
+//         // console.log("b", b);
+//         // console.log("a", a);
+
+//     }
+//     inner();
+//     console.log("b", b);
+// }
+
+// outer();
+// // console.log("c", c);
+// // console.log("b", b);
+// console.log("a", a);
+
+
+// function createCalc(n){
+//     return function(){
+//         console.log(10 * n);
+//     }
+// }
+
+// // createCalc(34);
+// let calc = createCalc(34);
+// // console.log(calc);
+// calc();
+
+
+// function increment(n) {
+//     return function (num) {
+//         return n + num;
+//     }
+// }
+
+// let one = increment(1);
+// console.log(one(10));
+// console.log(one(32));
+
+// let ten = increment(10);
+// console.log(ten(10));
+// console.log(ten(32));
+
+
+// function urlGenerator(domain){
+//     return function(url){
+//         return `https://${url}.${domain}`;
+//     }
+// }
+
+// let ruUrl = urlGenerator("ru");
+// console.log(ruUrl("yandex"));
+// console.log(ruUrl("mail"));
+
+// let comUrl = urlGenerator("com");
+// console.log(ruUrl("google"));
+// console.log(ruUrl("youtube"));
+
+// 1-й способ (передачи this):
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function(ms){
+//         // console.log(this);
+//         let self = this;
+//         setTimeout(function(){
+//             console.log("inner:", self);
+//             console.log("name:", self.name);
+//             console.log("age:", self.age);
+//             console.log("job:", self.job);
+//         }, ms);
+//     }
+// }
+
+// // console.log("!!!", this);
+// person.displayInfo(2000);
+
+// 2-й способ:
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function(ms){
+
+//         setTimeout(function(){
+//             console.log("inner:", this);
+//             console.log("name:", this.name);
+//             console.log("age:", this.age);
+//             console.log("job:", this.job);
+//         }.bind(this), ms);
+//     }
+// }
+
+// // console.log("!!!", this);
+// person.displayInfo(2000);
+
+// 3-й способ:
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function (ms) {
+
+//         setTimeout(() => {
+//             console.log("inner:", this);
+//             console.log("name:", this.name);
+//             console.log("age:", this.age);
+//             console.log("job:", this.job);
+//         }, ms);
+//     }
+// }
+
+// // console.log("!!!", this);
+// person.displayInfo(2000);
+
+
+// function first() {
+//     setTimeout(function(){
+//         console.log("Первый");
+
+//         setTimeout(function(){
+//             console.log("Второй");            
+//         }, 100);
+//     }, 1000);
+// }
+
+// // function second() {
+// //     console.log("Второй");
+// // }
+
+// first();
+// // second();
+
+// Click -> Server -> Database -> Server -> Client
+
+// структура "коллбэк" функции
+/* console.log("Клиент: хочу получить список пользователей");
+console.log("...");
+
+setTimeout(function(){
+    console.log("Сервер: запрашиваю список пользователей в базе данных");
+    console.log("...");
+
+    setTimeout(function(){
+        console.log("БД: Формирую список пользователей")
+        console.log("...");
+
+        setTimeout(function(){
+            console.log("Сервер: трансформирую данные для клиента");
+            console.log("...");
+
+            setTimeout(function(){
+                console.log("Клиент: получил данные и отображаю их");
+                // console.log("...");
+            }, 1000);
+        }, 500);
+    }, 500);
+}, 1000); */
+
+//------------ моя копия кода (ниже посмотреть, что не так)----
+// console.log("Клиент: хочу получить список пользователей");
+// console.log("...");
+
+// let promise = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         let users = [
+//                 {uid: "id", name: "Igor"},
+//                 {uid: "id2", name: "Irina"}
+//             ]
+//         console.log("Сервер: запрашиваю список пользователей в БД");
+//         console.log("...");
+//         resolve(users);
+//     }, 1000);
+// });
+
+// // promise.then(function(){
+// //     setTimeout(function(){
+// //         console.log("БД: Формирую список пользователей")
+// //         console.log("...");
+// //     }, 500);
+// // })
+
+
+// promise.then(function(dbUsers){
+//     return new Promise(function(resolve, reject){
+//         setTimeout(function(){
+//             let users = dbUsers.map(function(user){
+//                 return{
+//                     id: user.uid,
+//                     firstName: user.name,
+//                     timestamp: Data.now()
+//                 }
+//             })
+//             console.log("БД: Формирую список пользователей")
+//             console.log("...");
+//             resolve(users);
+//         }, 500);
+//     })
+// })
+// .then(function(users){
+//     return new Promise(function(resolve, reject){
+//         setTimeout(function(){
+//             console.log("Сервер: трансформирую данные для клиента");
+//             console.log("...");
+//             resolve();
+//         }, 500);
+//     })
+// })
+// .then(function(){
+//     return new Promise(function(resolve, reject){
+//         setTimeout(function(){
+//             console.log("Клиент: получил данные и отображаю их");
+//             // console.log("...");
+//             resolve();
+//         }, 1000);
+//     })
+// })
+// .catch(function(error){
+//     console.log(error);
+// })
+// .finally(function(){
+//     console.log("finally");
+// });
+
+//----------------- копия кода от Елены Анатольевны (выше посмотреть, что не так)----
+
+/* console.log("Клиент: хочу получить список пользователей");
+console.log("...");
+ 
+let promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("Сервер: запрашиваю список пользователей в БД");
+        console.log("...");
+        resolve();
+    }, 1000);
+});
+ 
+// promise.then(function(){
+//     setTimeout(function(){
+//         console.log("БД: формирую список пользователей");
+//         console.log("...");
+//     }, 500);
+// })
+ 
+promise.then(function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            let users = [
+                {uid: "id1", name: "Igor"},
+                {uid: "id2", name: "Irina"},
+            ]
+            // reject("База данных не смогла получить список пользователей")
+            console.log("БД: формирую список пользователей", users);
+            console.log("...");
+            resolve(users);
+        }, 500);
+    })
+})
+.then(function (dbUsers) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Сервер: трансформирую данные для клиента");
+            console.log("...");
+            let users = dbUsers.map(function(user){
+                return {
+                    id: user.uid,
+                    firstName: user.name,
+                    timestamp: Date.now()
+                }
+            })
+            resolve(users)
+        }, 500);
+    })
+})
+.then(function (users) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Клиент: получил данные и отображаю их", users);
+            resolve()
+        }, 1000);
+    })
+})
+.catch(function(error){
+    console.log(error);    
+})
+.finally(function(){
+    console.log("Finally");    
+}); */
+
+//----------end--- копия кода от Елены Анатольевны (выше посмотреть, что не так)----
