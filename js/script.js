@@ -2208,7 +2208,7 @@ console.log(bmw);
 console.log(bmw.getAge()); */
 // -----------------
 
-function User(pName, pAge){
+/* function User(pName, pAge){
     this.name = pName;
     this.age = pAge;
 
@@ -2218,20 +2218,20 @@ function User(pName, pAge){
 }
 
 let tom = new User("Tom", 26);
-tom.displayInfo();
+tom.displayInfo(); */
 
 // ---------- Занятие lesson 13 --------
 
 // Деструктуризация
 
-// let user = {
-//     login: {
-//         firstName: "Kate",
-//         lastName: "Pavlova"
-//     },
-//     password: "qwerty",
-//     role: "quest"
-// }
+/* let user = {
+    login: {
+        firstName: "Kate",
+        lastName: "Pavlova"
+    },
+    password: "qwerty",
+    role: "quest"
+} */
 
 // let {login: {firstName: f, lastName: l}, password, role} = user;
 // document.writeln(f + " " + l + " " + password + " " + role);
@@ -2252,10 +2252,10 @@ tom.displayInfo();
 // document.writeln(role);
 
 /* let number = [3, 5, 6];
-// let [a, b, c] = number;
-// document.writeln(a + " " + b + " " + c);
-let [, , c] = number;
-document.writeln(c); */
+let [a, b, c] = number;
+document.writeln(a + " " + b + " " + c);
+// let [, , c] = number;
+// document.writeln(c); */
 
 //-------------------
 // let pers = {
@@ -2458,7 +2458,7 @@ document.writeln(Animal.counter());
 document.writeln(Rabbit.counter()); */
 //-------------------
 
-/* class Header{
+class Header{
     constructor(img, h1, h2){
         this.src = img;
         this.h1 = h1;
@@ -2506,7 +2506,7 @@ header2.render("header2");
 let img3 = "https://cdn3.iconfinder.com/data/icons/font-awesome-brands/512/node-js-128.png";
 
 let header3 = new HeaderExt(img3, "Заголовок в наследнике", "Описание в классе", "+7 999 123-45-67");
-header3.render("header-ext"); */
+header3.render("header-ext");
 
 // ---------- Занятие lesson 14 ----_JavaScript_ (order DZ_59)--------
 
