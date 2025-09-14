@@ -2458,7 +2458,7 @@ document.writeln(Animal.counter());
 document.writeln(Rabbit.counter()); */
 //-------------------
 
-class Header{
+/* class Header{
     constructor(img, h1, h2){
         this.src = img;
         this.h1 = h1;
@@ -2506,7 +2506,7 @@ header2.render("header2");
 let img3 = "https://cdn3.iconfinder.com/data/icons/font-awesome-brands/512/node-js-128.png";
 
 let header3 = new HeaderExt(img3, "Заголовок в наследнике", "Описание в классе", "+7 999 123-45-67");
-header3.render("header-ext");
+header3.render("header-ext"); */
 
 // ---------- Занятие lesson 14 ----_JavaScript_ (order DZ_59)--------
 
