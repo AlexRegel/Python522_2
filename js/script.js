@@ -2921,3 +2921,69 @@ promise.then(function () {
 }); */
 
 //----------end--- копия кода от Елены Анатольевны (выше посмотреть, что не так)----
+
+// ------- les 16  ----
+
+/* let test = ms => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), ms);
+     })
+}
+
+let p1 = test(1000).then(() => ({name: "1000 ms"}));
+let p2 = test(2000).then(() => ({name: "2000 ms"}));
+
+Promise.all([p1, p2]).then((data) => {
+    console.log("all", data);
+});
+
+Promise.race([p1, p2]).then((data) => {
+    console.log("race", data);
+}); */
+// -------------
+
+/* fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(json => console.log(json)) */
+
+// -------------
+
+/* document.querySelector("#load").addEventListener("click", loadUsers);
+
+function loadUsers() {
+    let url = "https://jsonplaceholder.typicode.com/users";
+    fetch(url)
+        .then(function (responce) {
+            return responce.json()
+        })
+        .then(function (data) {
+            let ul = document.querySelector("#list");
+            let html = data.map(function(item){
+                return "<li>" + item.id + " " + item.name + " " + item.email + "</li>";
+            })
+            ul.insertAdjacentHTML("afterbegin", html.join(" "));
+        })
+} */
+// ---
+
+/* document.querySelector("#load").addEventListener("click", loadUsers);
+
+async function loadUsers() {
+    let url = "https://jsonplaceholder.typicode.com/users";
+    let responce = await fetch(url);
+    let data = await responce.json();
+    // let ul = ;
+    let html = data.map(function(item){
+            return "<li>" + item.id + " " + item.name + " " + item.email + "</li>";
+        })
+    document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
+} */
+
+// -------------
+
+// bom - browser object model
+
+// window.alert("Hello");
+
+let box = document.querySelector("#box");
+console.log(box.getBoundingClientRect());
