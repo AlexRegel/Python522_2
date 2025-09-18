@@ -1,14 +1,24 @@
 let start = document.querySelector("#start");
 let game = document.querySelector("#game");
 let time = document.querySelector("#time");
+let timeHeader = document.querySelector("#time-header");
+let resultHeader = document.querySelector("#result-header");
+let result = document.querySelector("#result");
+let gameTime = document.querySelector("#game-time");
 let score = 0;
 let isGameStarted = false;
 
 start.addEventListener("click", startGame);
 game.addEventListener("click", handlBoxClick);
+gameTime.addEventListener("input", setGameTime);
 
 function startGame() {
     // console.log("Start");
+    score = 0;
+    setGameTime();
+    gameTime.setAttribute('disabled', 'true');
+    timeHeader.classList.remove('hide');
+    resultHeader.classList.add('hide');
     isGameStarted = true;
     start.classList.add('hide');
     game.style.background = "#FFF";
@@ -27,11 +37,22 @@ function startGame() {
     renderBox();
 }
 
+function setGameTime(){
+    let tm = +gameTime.value;
+    time.textContent = tm.toFixed(1);
+    timeHeader.classList.remove('hide');
+    resultHeader.classList.add('hide');
+}
+
 function endGame() {
     isGameStarted = false;
     game.innerHTML = "";
+    result.textContent = score;
+    gameTime.removeAttribute('disabled');
     start.classList.remove('hide');
     game.style.background = "#9be8fb";
+    timeHeader.classList.add('hide');
+    resultHeader.classList.remove('hide');
 }
 
 function getRandom(min, max) {
