@@ -2964,9 +2964,9 @@ function loadUsers() {
             ul.insertAdjacentHTML("afterbegin", html.join(" "));
         })
 } */
-// ---
-
-document.querySelector("#load").addEventListener("click", loadUsers);
+// -------
+// Загрузить пользователей из JSON в JS-формат, отобажая на странице
+/* document.querySelector("#load").addEventListener("click", loadUsers);
 
 async function loadUsers() {
     let url = "https://jsonplaceholder.typicode.com/users";
@@ -2977,7 +2977,7 @@ async function loadUsers() {
             return "<li>" + item.id + " " + item.name + " " + item.email + "</li>";
         })
     document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
-}
+} */
 
 // -------------
 
@@ -2985,5 +2985,5 @@ async function loadUsers() {
 
 // window.alert("Hello");
 
-/* let box = document.querySelector("#box");
-console.log(box.getBoundingClientRect()); */
+// let box = document.querySelector("#box");
+// console.log(box.getBoundingClientRect());
