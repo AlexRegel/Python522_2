@@ -1,0 +1,36 @@
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    /* Убрать маркеры списка: */
+    list-style: none;
+    background: yellowgreen;
+    padding: 30px;
+    font-weight: 800;
+    font-family: "Arial";
+    margin: 0;
+    border: solid 5px orange;
+}
+
+nav a {
+    color: aqua;
+    text-decoration: none;
+    border: solid 5px yellow;
+    border-radius: 25%;
+    padding: 5px;
+}
+
+/* .custom-link {
+    color: aqua;
+    text-decoration: none;
+    border: solid 5px yellow;
+    border-radius: 25%;
+    padding: 5px;
+} */
+
+.App-header h4 {
+    margin: 0;
+}
+
+.App-header p {
+    margin: 0;
+}

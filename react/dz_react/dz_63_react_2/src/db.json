@@ -1,0 +1,46 @@
+{
+  "music": [
+    {
+      "name": "Игорь Тальков",
+      "album": "Альбом «Россия»",
+      "release": "1991 г.",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ITalkov.jpg/128px-ITalkov.jpg"
+    },
+    {
+      "name": "Виктор Цой, группа «Кино»",
+      "album": "Звезда по имени Солнце",
+      "release": "1989 г.",
+      "photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/68690827-4589-4e3e-b66d-362051753883/180"
+    },
+    {
+      "name": "Athos (Афонский хор)",
+      "album": "Greek Byzantine orthodox chant: Agni Parthene",
+      "release": "2019 г.",
+      "photo": "https://i.ytimg.com/vi/OYRy9Lv9jPs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDh-XXxLcfdbujVyJHVnbaGukM_hg"
+    },
+    {
+      "name": "Архидиакон Константин Барган & Артём Василевич – Мужской хор «Русский Формат»",
+      "album": "«ВЕРА ВЕЧНА»",
+      "release": "2022 г.",
+      "photo": "https://afisha.cultinfo.ru/images/msgafisha/events/listimyaga/1/101693/UkVGmFmdMxFr3L6udRcfn2nfsYnO0dh9mg9dvWXu.jpg"
+    },
+    {
+      "name": "Хор Братии Валаамского Монастыря",
+      "album": "Марие, Дево чистая",
+      "release": "2016 г.",
+      "photo": "https://misterticket.ru/thumbnail_cache/696_696_frame_DUd0m23W6jFCIkSVAi34oQPytcD6QZ-u.jpg"
+    },
+    {
+      "name": "Simon Khorolskiy & Brothers",
+      "album": "Велики и чудны дела Твои",
+      "release": "2017 г.",
+      "photo": "https://holychords.pro/thumb.php?src=/storage/artist/QHCjdikMVXlToF8hjm1jkJgH7Rnc7rwW8E5seE00.jpeg&t=m&w=600&h=600"
+    },
+    {
+      "name": "Mr.Credo",
+      "album": "Чудная долина",
+      "release": "2013 г.",
+      "photo": "https://avt-16.foto.mail.ru/community/mr._credo/_avatarbig"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+article {
+    background-color: rgb(156, 135, 175);
+    padding: 5px;
+    margin: 10px 20px 20px;
+}
+
+/* .itemView p {
+    margin: 0;
+} */
+
+.alll h6 {
+    margin: 0;
+    border-bottom: solid #6e1414 3px;
+     /* "solid, blue, 5px" */
+    font-weight: 700;
+    font-size: 25px;
+    color: #6e1414;
+    font-style: oblique;
+    background: turquoise;
+}
+
+.alll{
+    background: turquoise;
+}
+
+
+.itemView {
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 25px;
+    margin-top: 25px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    background: rgb(0, 204, 255);
+}
+
+.app {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* contain */
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 22px;
+    text-align: center;
+}
+
+.album {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.release {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 22px;
+}

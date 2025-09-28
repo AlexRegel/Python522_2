@@ -1,8 +1,8 @@
 
 import './App.css';
-import Article from './Article';
-import Header from './Header';
-import Footer from './Footer';
+import Article from '../Article/Article';
+import Header from '../header/Header';
+import Footer from '../Footer/Footer';
 
 function App() {  // JSX
   return (
