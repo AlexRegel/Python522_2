@@ -10,11 +10,13 @@ class Footer extends React.Component {
                 padding: '5px', marginTop: "0"
             }}>
                 {/* 'violet' 'purple' */}
-                <p style={{ fontFamily: 'TimesNewRoman', 
-                color: 'purple', fontSize: 18, margin: '0'}}>
+                <p style={{
+                    fontFamily: 'TimesNewRoman',
+                    color: 'purple', fontSize: 18, margin: '0'
+                }}>
                     {/* for (let i = 0 in 10){ */}
-                        {footerText}                    
-                    </p>
+                    {footerText}
+                </p>
             </footer>
         );
     }

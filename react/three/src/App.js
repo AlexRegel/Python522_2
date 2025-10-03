@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import Hello from './Hello';
+// import Hello from './Hello';
 import Length from './Length';
-import Form from './Form';
+// import Form from './Form';
 import Range from './Range';
+import Test from './Test';
+import User from './User';
 
-import Posts from './Posts';
+// import Posts from './Posts';
 
 class App extends React.Component {
 
@@ -14,11 +16,20 @@ class App extends React.Component {
       { id: '1', name: "JS Basics", title: "Обучение базовым конструкциям JavaScript" },
       { id: '2', name: "JS Advanced", title: "Обучение расширенным возможностям JavaScript" },
       { id: '3', name: "React JS", title: "Обучение React JS" },
-    ]
+    ],
+    show: false
   }
 
-  removePost = (id) => {
-    this.setState({ posts: this.state.posts.filter(post => post.id !== id) })
+  // removePost = (id) => {
+  //   this.setState({ posts: this.state.posts.filter(post => post.id !== id) })
+  // }
+
+  componentDidMount(){
+    console.log("Component Did Mount");
+  }
+
+  componentDidUpdate(){
+    console.log('Component Did Update');
   }
 
   render() {
@@ -27,10 +38,13 @@ class App extends React.Component {
     return (
       //  className="App"
       <div>
-        <Posts posts={posts} removePost={this.removePost} />
-        <Hello />
+        <button onClick={() => this.setState({show: !this.state.show})}>User</button>
+        {this.state.show ? <User />: null}
+        <Test />
+        {/* <Posts posts={posts} removePost={this.removePost} /> */}
+        {/* <Hello /> */}
         <Length />
-        <Form />
+        {/* <Form /> */}
         <Range />
       </div>
     );

@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './Nav';
 import Header from './Header';
 import Article from './Article';
-import Footer from './Footer';
+import Footer from './Footer.js';
 
 function App(props) {
   // let title = "My site";
