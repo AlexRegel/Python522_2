@@ -43,20 +43,41 @@ class Search extends React.Component {
         )
     }
 
+    forward10 = () => {
+        this.setState(
+            { page: this.state.page + 10 },
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page) }
+        )
+    }
+
+    // back 10 pages
+    back10 = () => {
+        this.setState(
+            { page: this.state.page - 10 },
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page) }
+        )
+    }
+
     render() {
-        let limit = 10;
-        let totalPages = Math.ceil(this.props.totalCount / limit);
-        // console.log("totalPages", totalPages);
+        let limButPage = 10;  // Лимит количества кнопок на странице
+        let normBut = 10;  // норма для страницы браузера (кол-ва кнопок)
+        // общее количество страниц = окр.вверх(общее кол-во фильмов / Лимит количества кнопок)
+        let allPages = Math.ceil(this.props.totalCount / limButPage); 
+        // console.log("allPages", allPages);
 
-        let lastIndex = totalPages <= 10 ? totalPages : this.state.page + limit;
-        let firstIndex = totalPages <= 10 ? lastIndex - limit + lastIndex - 1 : lastIndex - limit;
-
+        let lastIndex = allPages <= normBut ? allPages : this.state.page + limButPage;
+        let firstIndex = allPages <= normBut ? lastIndex - limButPage + lastIndex - 1 : lastIndex - limButPage;
+    
+        // Рассчитываем индекс средней кнопки
+        // const middleIndex = Math.floor((lastIndex - firstIndex) / 2) + firstIndex;
 
         let num = [];
-        for (let i = 0; i <= totalPages; i++) {
+        for (let i = 0; i <= allPages; i++) {
             num.push(i);
         }
-        // console.log("num", num)
+        // console.log(num);
+        // render() {
+        //     let cardsOnSheet = 10;
 
         return (
             <>
@@ -81,19 +102,33 @@ class Search extends React.Component {
                 </div>
                 <div className="navigation">
                     <button className="btn" onClick={this.prevPage}>Prev</button>
+                    {/* кнопка назад на 10 страниц */}
+                    <button 
+                        className="btn"
+                        onClick={this.back10}
+                        // применение локальных стилей с условием наличия заданного кол-ва страниц
+                        style={{ display: allPages > 20 && this.state.page > 10 ? 'block' : 'none' }}
+                    >back 10 pages</button>
 
                     <div className="items">
-                        {
+                        { //firstIndex                            
                             num.slice(firstIndex, lastIndex + 1).map((el, index) => (
                                 <button
-                                    className="btn"
-                                    key={index}
-                                    style={{ background: this.state.page !== el ? "" : "yellow" }}
+                                    className="btn" // для стилизации
+                                    key={index}  // уникальный ключ
+                                    // применение локальных стилей
+                                    style={{ background: this.state.page !== el ? "" : "green" }}
                                     onClick={() => this.setPage(el)}
                                 >{el}</button>
                             ))
                         }
                     </div>
+                    {/* кнопка вперёд на 10 страниц */}
+                    <button
+                        className="btn"
+                        onClick={this.forward10}
+                        style={{ display: allPages > 20 ? 'block' : 'none' }}
+                    >forward 10 page</button>
 
                     <button className="btn" onClick={this.nextPage}>Next</button>
                 </div>

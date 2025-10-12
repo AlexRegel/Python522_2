@@ -10,9 +10,9 @@ class Main extends React.Component{
         loading: true,
         count: 0
     }
-// ert
+
     componentDidMount(){
-        fetch('https://www.omdbapi.com/?apikey=ad9aa169&s=matrix')
+        fetch('https://www.omdbapi.com/?apikey=ad9aa169&s=ert')
         .then(response => response.json())
         .then(data => this.setState({movies: data.Search, loading: false, count: data.totalResults}))
     }
@@ -27,7 +27,7 @@ class Main extends React.Component{
     render(){
         // console.log(this.state.movies);
         const {movies, loading, count} = this.state;
-        console.log(count);
+        console.log("count", count);
 
         return(
             <div className="main">

@@ -40,8 +40,21 @@
     font-size: 20px;
 }
 
-.navigation{
+.navigation {
     display: flex;
     justify-content: space-between;
-    margin: 30px;
+    margin: 20px;
+}
+
+/* дш\ля заглушки */
+.btnZagl {
+    background: #fff;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 4px 2px #fff;
+    border: 2px solid #fff;
+    /* border-style: double; */
+    margin-left: 10px;
 }
