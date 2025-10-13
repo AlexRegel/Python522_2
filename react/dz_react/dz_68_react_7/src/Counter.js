@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 function Counter(){
@@ -10,10 +10,6 @@ function Counter(){
         setCnt(cnt - 1);
     }
 
-    useEffect(() => {
-        console.log("Hello from counter", cnt);
-        return () => console.log("Goodbye counter")
-    }, [cnt])
 
     return(
         <div>
