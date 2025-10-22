@@ -1,22 +1,52 @@
 import ImageGallery from "react-image-gallery";
 import './App.css';
 import data from './data.json';
+import { useState } from "react";
 
-function App(){
+function App() {
     const collections = data.collections;
+    const cats = data.categories;
+    const [searchValue, setsearchValue] = useState('');
+    const [categoryId, setCategoryId] = useState(0);
 
-    return(
+    return (
         <div className="App">
+            {
+                console.log(categoryId)
+            }
             <h1>Моя коллекция фотографий</h1>
+
+            <div className="top">
+                <ul className="tags">
+                    {
+                        cats.map((obj, index) => (
+                            <li
+                                key={index}
+                                onClick={() => setCategoryId(index)}
+                                className={categoryId === index ? 'active' : ''}
+                            >{obj.name}</li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <div className="search">
+                <input type="text" className="search-input" placeholder="Поиск по названию"
+                    value={searchValue}
+                    onChange={e => setsearchValue(e.target.value)}
+                />
+            </div>
 
             <div className="image-gallery-wrapper">
                 {
-                    collections.map((obj, index) => (
-                        <div className="collection" key={index}>
-                            <h2>{obj.name}</h2>
-                            <ImageGallery items={obj.photos} />
-                        </div>
-                    ))
+                    collections.filter(obj => obj.name.toLowerCase().includes(searchValue.toLowerCase()) && 
+                    (categoryId === obj.category || categoryId === 0))
+                        .map((obj, index) => (
+                            <div className="collection" key={index}>
+                                <h2>{obj.name}</h2>
+                                <ImageGallery items={obj.photos} />
+                            </div>
+                        ))
                 }
             </div>
 

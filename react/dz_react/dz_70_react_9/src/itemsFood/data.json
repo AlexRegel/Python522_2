@@ -1,0 +1,24 @@
+{
+    "food": [
+        {
+            "id": 1,
+            "name_food": "Apple"
+        },
+        {
+            "id": 2,
+            "name_food": "Banana"
+        },
+        {
+            "id": 3,
+            "name_food": "Tea"
+        },
+        {
+            "id": 4,
+            "name_food": "Coffe"
+        },
+        {
+            "id": 5,
+            "name_food": "Kefir"
+        }
+    ]
+}
