@@ -6732,7 +6732,7 @@
 #     main()
 # # здесь к 'main.py' прилагается файл 'parsers.py' - окончание.
 # ---------------------------------------------------------
-
+#  lesson 71
 from jinja2 import Template
 
 # name = "Игорь"
@@ -6829,3 +6829,39 @@ tm = Template(html)
 msg = tm.render()
 
 print(msg)
+
+# ---------------------------------------------------------
+#  lesson 72
+# from jinja2 import Template
+
+# from jinja2 import Environment, FileSystemLoader
+
+# person = [
+#     {"name": "Алексей"},
+#     {"name": "Никита"},
+#     {"name": "Виталий"},
+# ]
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template("index.html")
+# msg = tm.render(users=person, title="About Jinja")
+#
+# print(msg)
+
+# ************************************************
+# Блок кода работы с каталогои "templates",
+# файлы: "about.html", "footer.html", "header.html"
+# "index.html", "page.html"
+
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template("about.html")
+# msg = tm.render()
+#
+# print(msg)
+
+# Окончание блок кода работы с каталогом "templates".
+# ************************************************
