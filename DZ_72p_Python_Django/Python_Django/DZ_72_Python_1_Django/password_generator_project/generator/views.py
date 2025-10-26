@@ -38,8 +38,14 @@ def info(request):
     соответствующие изменению сложности пароля:
     Верхний регистр, цифры и/или спецсимволы. 
     После установки опций кликните по клавише 
-    "Сгенерировать пароль". """
+    "Сгенерировать пароль"."""
+    footertext = "Автор: Сергей Хромов"
+    copyright = "Copyright"
+    charcop = chr(169)
 
     return render(request,
                   "generator/info.html",
-                  {'info': ptext})
+                  { 'info': ptext,
+                            'infofoot': footertext,
+                            'copyright': copyright,
+                            'charcop': charcop})
