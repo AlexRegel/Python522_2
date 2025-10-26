@@ -6815,20 +6815,20 @@ from jinja2 import Template
 # print(msg)
 
 
-html = """
-{% macro input_func(name, value='', type='text', size=20) %}
-    <input type="{{ type }}" name="{{ name }}" value="{{ value }}" size="{{ size }}">
-{% endmacro %}
-
-<p>{{ input_func('username') }}</p>
-<p>{{ input_func('email') }}</p>
-<p>{{ input_func('password', type='password') }}</p>
-"""
-
-tm = Template(html)
-msg = tm.render()
-
-print(msg)
+# html = """
+# {% macro input_func(name, value='', type='text', size=20) %}
+#     <input type="{{ type }}" name="{{ name }}" value="{{ value }}" size="{{ size }}">
+# {% endmacro %}
+#
+# <p>{{ input_func('username') }}</p>
+# <p>{{ input_func('email') }}</p>
+# <p>{{ input_func('password', type='password') }}</p>
+# """
+#
+# tm = Template(html)
+# msg = tm.render()
+#
+# print(msg)
 
 # ---------------------------------------------------------
 #  lesson 72
