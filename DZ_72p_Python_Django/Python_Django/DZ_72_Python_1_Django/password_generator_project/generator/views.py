@@ -45,7 +45,7 @@ def info(request):
 
     return render(request,
                   "generator/info.html",
-                  { 'info': ptext,
-                            'infofoot': footertext,
-                            'copyright': copyright,
-                            'charcop': charcop})
+                  {'info': ptext,
+                           'infofoot': footertext,
+                           'copyright': copyright,
+                           'charcop': charcop})
