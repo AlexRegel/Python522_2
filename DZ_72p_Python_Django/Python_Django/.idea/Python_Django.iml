@@ -4,8 +4,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/DZ_72_Python_1_Django/password_generator_project" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DZ_73_Python_2_Django/giant_planets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DZ_74_Python_3_Django/giant_planets" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.12 (Python_Django)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

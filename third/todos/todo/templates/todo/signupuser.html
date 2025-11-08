@@ -3,6 +3,9 @@
 {% block content %}
 
 <h1>Регистрация</h1>
+
+<h3>{{ error }}</h3>
+
 <form method="post" class="register">
     {% csrf_token %}
     {{ form }}
