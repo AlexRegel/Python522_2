@@ -1,0 +1,22 @@
+{% extends 'gt_planets/base.html' %}
+
+{% block content %}
+
+<h1>Исследование планет солнечной системы</h1>
+<h3 class="count">На странице представлены варианты исследования по {{ stadyplanets.count }} планетам солнечной системы</h3>
+
+{% for stadyplanet in stadyplanets %}
+<div class="element">
+    <h3 class="top"><a href="{% url 'idtion' stadyplanet.id %}">{{ stadyplanet.title }}</a></h3>
+    <div class="stady_text">
+        <h5>{{ stadyplanet.date|date:'d.m.Y' }}</h5>
+        <p>{{ stadyplanet.description|truncatechars:200 }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
+<!--        <p>{{ stadyplanet.description|striptags|truncatechars:200 }}</p>
+- где "striptags" - убирает теги, если они есть в тексте
+
+-->

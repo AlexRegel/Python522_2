@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'gt_planets/favicon.ico' %}">
+</head>
+<body>
+
+<div class="menu">
+    <div class="wrap">
+        <div class="logotipe">
+            <a href="{% url 'index' %}"><img src="{% static 'gt_planets/AstroScience.png' %}" alt=""></a>
+        </div>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'studygtplanets' %}">Исследования</a></li>
+                <li class="login">Пользователь: {{ user.username }}</li>
+                <li href="">
+                    <form action="{% url 'exitappuser' %}" method="post">
+                        {% csrf_token %}
+                            <button class="top">Выход</button>
+                    </form>
+                </li>
+            {% else %}
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'registeruser' %}">Регистрация</a></li>
+                <li><a href="{% url 'loginuser' %}">Войти</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+    <div class="content">
+        <div class="wrap">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

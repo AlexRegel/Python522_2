@@ -1,0 +1,16 @@
+{% extends 'gt_planets/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Регистрация:</h1>
+
+<h3>{{ error }}</h3>
+
+<form method="post" class="reg">
+    {% csrf_token %}
+   {{ form_reg }}
+    <button class="btn">Зарегистрироваться</button>
+</form>
+<p></p>
+
+{% endblock %}
