@@ -62,7 +62,7 @@ body {
 }
 
 .top {
-    background: #CCFFFF;
+    background: #161066;
     margin: 0;
     border: none;
     cursor: pointer;
@@ -134,10 +134,19 @@ a img{
     border: none;
 }
 
+/* #CCFFFF */
 .top {
-    background: #CCFFFF;
+    background: #161066;
     margin: 0;
     border: none;
     cursor: pointer;
     font-size: 18px;
+}
+
+.exit{
+    background: transparent;
+    border: none;
+    
+    font-size: 20px;
+    cursor: pointer;
 }

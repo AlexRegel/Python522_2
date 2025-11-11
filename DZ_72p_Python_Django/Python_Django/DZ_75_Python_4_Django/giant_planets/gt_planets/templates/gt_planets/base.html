@@ -19,10 +19,10 @@
                 <li><a href="{% url 'index' %}">Главная</a></li>
                 <li><a href="{% url 'studygtplanets' %}">Исследования</a></li>
                 <li class="login">Пользователь: {{ user.username }}</li>
-                <li href="">
+                <li>
                     <form action="{% url 'exitappuser' %}" method="post">
                         {% csrf_token %}
-                            <button class="top">Выход</button>
+                            <button class="exit">Выход</button>
                     </form>
                 </li>
             {% else %}
