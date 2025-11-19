@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 def create_profile(sender, instance, created, **kwargs):
+    print("Created:", created)
     if created:
         user = instance
         Profile.objects.create(
@@ -14,7 +15,17 @@ def create_profile(sender, instance, created, **kwargs):
         )
     print("Sender:", sender)
     print("Instance:", instance)
-    print("Created:", created)
+
+
+def update_user(sender, instance, created, **kwargs):
+    profile = instance
+    user = profile.user
+
+    if created is False:
+        user.first_name = profile.name
+        user.username = profile.username
+        user.email = profile.email
+        user.save()
 
 
 def delete_user(sender, instance, **kwargs):
@@ -24,4 +35,5 @@ def delete_user(sender, instance, **kwargs):
 
 
 post_save.connect(create_profile, sender=User)
+post_save.connect(update_user, sender=Profile)
 post_delete.connect(delete_user, sender=Profile)
